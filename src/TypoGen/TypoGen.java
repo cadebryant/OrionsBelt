@@ -10,7 +10,6 @@ import java.net.MalformedURLException;
 import java.net.URL;
 
 public class TypoGen {
-	private URL typoFile;
 	private InputStream typoFIS;
 	private InputStream typos2;
 	private InputStreamReader typoISR;
@@ -23,13 +22,7 @@ public class TypoGen {
 	private String typoLine;
 
 	public TypoGen() {
-		try {
-			typoFile = new URL("https://raw.githubusercontent.com/iwek/typos/master/typos.txt");
-		} catch (MalformedURLException e1) {
-			// TODO Auto-generated catch block
-			e1.printStackTrace();
-		}
-
+		typoFIS = TypoGen.class.getResourceAsStream("typos1.txt");
 		typos2 = TypoGen.class.getResourceAsStream("typos2.txt");
 		typoData = new ArrayList<String>();
 		typoSets = new HashMap<String, TypoSet>();
@@ -37,21 +30,22 @@ public class TypoGen {
 		typoLine = "";
 
 		try {
-			typoFIS = typoFile.openStream();
 			typoISR = new InputStreamReader(typoFIS);
 			typoISR2 = new InputStreamReader(typos2);
 			typoBR = new BufferedReader(typoISR);
 			typoBR2 = new BufferedReader(typoISR2);
 
+			/* Read lines from typos1.txt.
+			 * Both typos1.txt and typos2.txt are based on data
+			 * from the following file:
+			 * https://raw.githubusercontent.com/iwek/typos/master/typos.txt
+			 */
 			while (typoBR.ready()) {
 				typoLine = typoBR.readLine();
 				typoData.add(typoLine);
 			}
 
-			/* Java can only read the original typos.txt up to the "solider,soldier" line,
-			 * so I've put all the lines that came after it in a new typos2.txt file for Java
-			 * to read.
-			 */
+			// Read lines from typos2.txt.
 			while (typoBR2.ready()) {
 				typoLine = typoBR2.readLine();
 				typoData.add(typoLine);
@@ -63,10 +57,10 @@ public class TypoGen {
 			typoISR2.close();
 			typoBR.close();
 			typoBR2.close();
-		} catch (FileNotFoundException e2) {
+		} catch (FileNotFoundException e1) {
+			e1.printStackTrace();
+		} catch (IOException e2) {
 			e2.printStackTrace();
-		} catch (IOException e3) {
-			e3.printStackTrace();
 		}
 
 		for (String typoPair: typoData) {
