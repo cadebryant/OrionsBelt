@@ -4,15 +4,16 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
+import java.nio.file.FileSystems;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
-
 import org.apache.lucene.document.Document;
+import org.apache.lucene.index.DirectoryReader;
 import org.apache.lucene.index.IndexReader;
-import org.apache.lucene.queryParser.QueryParser;
+//import org.apache.lucene.queryparser.classic.QueryParser;
 import org.apache.lucene.store.Directory;
 import org.apache.lucene.store.FSDirectory;
 
@@ -20,7 +21,7 @@ import com.cybozu.labs.langdetect.Detector;
 import com.cybozu.labs.langdetect.DetectorFactory;
 import com.cybozu.labs.langdetect.LangDetectException;
 
-public class Analyzer {
+public class SentimentAnalysis {
 
 	// path to lucene index
 	private final static String indexPath = "/Users/leomelzer/Downloads/Tweets/";
@@ -28,7 +29,7 @@ public class Analyzer {
 	private static String langProfileDirectory = "./src/profiles/";
 
 	// lucene queryParser for saving
-	private static QueryParser queryParser;
+	//private static QueryParser queryParser;
 
 	// used to store positive and negative words for scoring
 	static List<String> posWords = new ArrayList<String>();
@@ -53,8 +54,8 @@ public class Analyzer {
 		Directory dir;
 		IndexReader docReader = null;
 		try {
-			dir = FSDirectory.open(new File(indexPath));
-			docReader = IndexReader.open(dir, true);
+			dir = FSDirectory.open(FileSystems.getDefault().getPath(indexPath));
+			docReader = DirectoryReader.open(dir);
 		} catch (IOException e1) {
 			e1.printStackTrace();
 		}
@@ -62,9 +63,9 @@ public class Analyzer {
 		System.out.println("START: reading file list");
 		// source: www.cs.uic.edu/~liub/FBS/sentiment-analysis.html
 		BufferedReader negReader = new BufferedReader(new FileReader(new File(
-				"./src/negative-words.txt")));
+				"./src/SentimentAnalysis/negative-words.txt")));
 		BufferedReader posReader = new BufferedReader(new FileReader(new File(
-				"./src/positive-words.txt")));
+				"./src/SentimentAnalysis/positive-words.txt")));
 
 		// currently read word
 		String word;
