@@ -7,5 +7,6 @@
 	<classpathentry kind="lib" path="C:/Users/cade/Dropbox/Documents/School/UoW/Ling575/OrionsBelt/lucene-queryparser-5.1.0.jar"/>
 	<classpathentry kind="lib" path="C:/Users/cade/Dropbox/Documents/School/UoW/Ling575/OrionsBelt/jsonic-1.2.0.jar"/>
 	<classpathentry kind="lib" path="C:/Users/cade/Dropbox/Documents/School/UoW/Ling575/OrionsBelt/langdetect.jar"/>
+	<classpathentry kind="lib" path="lucene-core-5.1.0.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
