@@ -21,8 +21,6 @@ import com.cybozu.labs.langdetect.LangDetectException;
 
 public class SentimentAnalysis {
 
-	// path to lucene index
-	private final static String indexPath = "/Users/leomelzer/Downloads/Tweets/";
 	// path to language profiles for classifier
 	private static String langProfileDirectory = "./src/profiles/";
 
@@ -42,21 +40,14 @@ public class SentimentAnalysis {
 	 * @throws IOException
 	 * @throws LangDetectException
 	 */
-	public static void main(String[] args) throws IOException,
+	public static void analyze(String inputText) throws IOException,
 			LangDetectException {
 
-		// huh, how long?
 		long startTime = System.currentTimeMillis();
 
 		// open lucene index
 		Directory dir;
 		IndexReader docReader = null;
-		try {
-			dir = FSDirectory.open(FileSystems.getDefault().getPath(indexPath));
-			docReader = DirectoryReader.open(dir);
-		} catch (IOException e1) {
-			e1.printStackTrace();
-		}
 
 		// source: www.cs.uic.edu/~liub/FBS/sentiment-analysis.html
 		BufferedReader negReader = new BufferedReader(new FileReader(new File(
@@ -78,7 +69,9 @@ public class SentimentAnalysis {
 		// cleanup
 		negReader.close();
 		posReader.close();
-
+		
+		int score = 0;
+		
 		// prepare language classifier
 		DetectorFactory.loadProfile(langProfileDirectory);
 		// store different languages
@@ -88,81 +81,30 @@ public class SentimentAnalysis {
 		// has 99% accuracy
 		Detector detector;
 
-		// current tweet
-		Document tweet;
-		// current score
-		int score = 0;
-		// current text
-		String text;
+		// we need a new instance every time unfortunately...
+		detector = DetectorFactory.create();
+		detector.append(inputText);
+		// classify language!
+		String detectedLanguage = detector.detect();
 
-		// maximum number of documents
-		int max = docReader.maxDoc();
-		// do we want to skip saving that document?
-		boolean skipSave = false;
-
-		for (int i = 0; i < max; i++) { //
-			try {
-				// read it!
-				tweet = docReader.document(i);
-
-				text = tweet.get("text");
-
-				// we need a new instance every time unfortunately...
-				detector = DetectorFactory.create();
-				detector.append(text);
-				// classify language!
-				String detectedLanguage = detector.detect();
-
-				// if it is not english...
-				if (detectedLanguage.equals("en") == false) {
-					stats[3]++;
-
-					// we can't classify non-english tweets, so just keep them
-					// neutral
-					score = 0;
-				} else if (text.startsWith("I'm at")
-						|| text.startsWith("I just became the mayor")
-						|| text.startsWith("I just ousted")) {
-					// all your foursquare updates are belong to us.
-					stats[4]++;
-					// and we don't save them. yo.
-					skipSave = true;
-				} else {
-					// finally! retrieve sentiment score.
-					score = getSentimentScore(tweet.get("text"));
-					// ++ index so we won't have -1 and stuff...
-					stats[score + 1]++;
-				}
-
-				// so now for the saving...
-				if (skipSave == false) {
-					Integer currentCount = langHitList.get(detectedLanguage);
-					// ...save the detected language for some stats
-					langHitList.put(detectedLanguage,
-							(currentCount == null) ? 1 : currentCount + 1);
-					
-					// tweet.set("language", detectedLanguage)
-					// tweet.set("sentiment", score);
-					// tweet.get("ID");
-				}
-			} catch (LangDetectException e) {
-				// thrown by the language classifier when tweets are like :D or
-				// :3 or ?????????
-				// count how many times there is no valid input, plus we won't
-				// save it as it's in the catch clause...
-				stats[5]++;
-			} catch (Exception e) {
-				// something went wrong, ouuups!
-				e.printStackTrace();
-				System.err.println("Doc at " + i + " does not exist");
-			}
+		// if it is not english...
+		if (detectedLanguage.equals("en") == false) {
+			stats[3]++;
+			score = 0;
+		} else {
+			score = getSentimentScore(inputText);
+			// ++ index so we won't have -1 and stuff...
+			stats[score + 1]++;
 		}
 
-		long endTime = System.currentTimeMillis();
-		long totalTime = endTime - startTime;
-
-		// cleanup
-		docReader.close();
+		Integer currentCount = langHitList.get(detectedLanguage);
+		// ...save the detected language for some stats
+		langHitList.put(detectedLanguage,
+				(currentCount == null) ? 1 : currentCount + 1);
+		
+		// tweet.set("language", detectedLanguage)
+		// tweet.set("sentiment", score);
+		// tweet.get("ID");
 	}
 
 	/**
