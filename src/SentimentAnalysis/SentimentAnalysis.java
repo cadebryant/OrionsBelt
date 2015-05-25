@@ -4,16 +4,10 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
-import java.nio.file.FileSystems;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import org.apache.lucene.document.Document;
-import org.apache.lucene.index.DirectoryReader;
-import org.apache.lucene.index.IndexReader;
-import org.apache.lucene.store.Directory;
-import org.apache.lucene.store.FSDirectory;
 
 import com.cybozu.labs.langdetect.Detector;
 import com.cybozu.labs.langdetect.DetectorFactory;
@@ -23,9 +17,6 @@ public class SentimentAnalysis {
 
 	// path to language profiles for classifier
 	private static String langProfileDirectory = "./src/profiles/";
-
-	// lucene queryParser for saving
-	//private static QueryParser queryParser;
 
 	// used to store positive and negative words for scoring
 	static List<String> posWords = new ArrayList<String>();
@@ -44,10 +35,6 @@ public class SentimentAnalysis {
 			LangDetectException {
 
 		long startTime = System.currentTimeMillis();
-
-		// open lucene index
-		Directory dir;
-		IndexReader docReader = null;
 
 		// source: www.cs.uic.edu/~liub/FBS/sentiment-analysis.html
 		BufferedReader negReader = new BufferedReader(new FileReader(new File(
@@ -101,10 +88,6 @@ public class SentimentAnalysis {
 		// ...save the detected language for some stats
 		langHitList.put(detectedLanguage,
 				(currentCount == null) ? 1 : currentCount + 1);
-		
-		// tweet.set("language", detectedLanguage)
-		// tweet.set("sentiment", score);
-		// tweet.get("ID");
 	}
 
 	/**
@@ -154,5 +137,4 @@ public class SentimentAnalysis {
 		// neutral to the rescue!
 		return 0;
 	}
-
 }
