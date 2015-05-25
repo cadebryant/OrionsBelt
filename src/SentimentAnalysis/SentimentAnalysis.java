@@ -9,11 +9,9 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.concurrent.TimeUnit;
 import org.apache.lucene.document.Document;
 import org.apache.lucene.index.DirectoryReader;
 import org.apache.lucene.index.IndexReader;
-//import org.apache.lucene.queryparser.classic.QueryParser;
 import org.apache.lucene.store.Directory;
 import org.apache.lucene.store.FSDirectory;
 
@@ -60,7 +58,6 @@ public class SentimentAnalysis {
 			e1.printStackTrace();
 		}
 
-		System.out.println("START: reading file list");
 		// source: www.cs.uic.edu/~liub/FBS/sentiment-analysis.html
 		BufferedReader negReader = new BufferedReader(new FileReader(new File(
 				"./src/SentimentAnalysis/negative-words.txt")));
@@ -82,12 +79,6 @@ public class SentimentAnalysis {
 		negReader.close();
 		posReader.close();
 
-		System.out.println("FINISH: reading file list");
-
-		// ----------------------------------------------
-
-		System.out.println("START: calculating sentiment");
-
 		// prepare language classifier
 		DetectorFactory.loadProfile(langProfileDirectory);
 		// store different languages
@@ -106,21 +97,10 @@ public class SentimentAnalysis {
 
 		// maximum number of documents
 		int max = docReader.maxDoc();
-		// used to give some feedback during processing the 1 million tweets
-		int j = 0;
 		// do we want to skip saving that document?
 		boolean skipSave = false;
 
 		for (int i = 0; i < max; i++) { //
-			if (i % 100000 == 0) {
-				System.out.println("PROCESSING: " + j * 100000 + " of "
-						+ max + " tweets processed...");
-				j++;
-			}
-
-			// reset, most of the times we want that.
-			skipSave = false;
-
 			try {
 				// read it!
 				tweet = docReader.document(i);
@@ -152,12 +132,6 @@ public class SentimentAnalysis {
 					score = getSentimentScore(tweet.get("text"));
 					// ++ index so we won't have -1 and stuff...
 					stats[score + 1]++;
-
-					// wanna see what neutral tweets look like? uncomment.
-					// if (score == 0) {
-					// System.out.println("Score: " + score + " for Tweet (" +
-					// tweet.get("ID") + "):"+ tweet.get("text"));
-					// }
 				}
 
 				// so now for the saving...
@@ -184,24 +158,8 @@ public class SentimentAnalysis {
 			}
 		}
 
-		System.out.println("FINISH: calculating sentiment");
-
-		// ----------------------------------------------
-
 		long endTime = System.currentTimeMillis();
 		long totalTime = endTime - startTime;
-
-		System.out.println("----------------------------------------------");
-		System.out.println("STATS - TIME: Analysis took "
-				+ TimeUnit.SECONDS.convert(totalTime, TimeUnit.MILLISECONDS)
-				+ " seconds");
-
-		// ----------------------------------------------
-
-		// get me some info!
-		System.out.println("STATS - COUNTS: [negative | neutral | positive | not english | foursquare | no text to classify]");
-		System.out.println("STATS - COUNTS: " + java.util.Arrays.toString(stats));
-		System.out.println("STATS - LANGUAGE: " + langHitList.toString());
 
 		// cleanup
 		docReader.close();

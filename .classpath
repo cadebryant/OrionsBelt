@@ -4,7 +4,7 @@
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="con" path="com.ibm.biginsights.project.BIGINSIGHTS_LIBS_CONTAINER/V3.0.1.0"/>
 	<classpathentry kind="lib" path="lucene-core-5.1.0.jar"/>
-	<classpathentry kind="lib" path="/Users/kwonus/o-belt/src/FuzzyMatch/simmetrics_jar_v1_6_2_d07_02_07.jar"/>
+	<classpathentry kind="lib" path="C:/Users/cade/Dropbox/Documents/School/UoW/Ling575/OrionsBelt/src/FuzzyMatch/simmetrics_jar_v1_6_2_d07_02_07.jar"/>
 	<classpathentry kind="lib" path="langdetect.jar"/>
 	<classpathentry kind="lib" path="lucene-queryparser-5.1.0.jar"/>
 	<classpathentry kind="lib" path="jsonic-1.2.0.jar"/>
