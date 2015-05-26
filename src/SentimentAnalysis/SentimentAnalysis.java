@@ -90,14 +90,27 @@ public class SentimentAnalysis {
 	
 			// so what we got?
 			String[] words = input.split(" ");
+			
+			// weighting factors:
+			int beginWeight = 3;
+			int midWeight = 1;
+			int endWeight = 5;
 	
 			// check if the current word appears in our reference lists...
 			for (int i = 0; i < words.length; i++) {
+				int weight = 1;
+				if (i <= words.length / 3) {
+					weight = beginWeight;
+				} else if (i >= words.length - (words.length / 3)) {
+					weight = endWeight;
+				} else {
+					weight = midWeight;
+				}
 				if (posWords.contains(words[i])) {
-					posCounter++;
+					posCounter += weight;
 				}
 				if (negWords.contains(words[i])) {
-					negCounter++;
+					negCounter += weight;
 				}
 			}
 	
