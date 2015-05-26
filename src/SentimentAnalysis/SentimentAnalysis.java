@@ -73,57 +73,56 @@ public class SentimentAnalysis {
 	 *         care about the actual delta
 	 */
 	private static int getSentimentScore(String input, boolean useFuzzyMatching) {
-		// apply fuzzy matching:
-		// TODO: this is a hack for now; obviously comparing the input to itself will return true :-)
-		boolean isMatch =  fuzzy.Compare(input, input);
-		// don't go into SA logic if fuzzy match fails, 
-		// unless the user specifies to NOT use fuzzy matching:
-		if (isMatch || !useFuzzyMatching) {
-			// normalize!
-			input = input.toLowerCase();
-			input = input.trim();
-			// remove all non alpha-numeric non whitespace chars
-			input = input.replaceAll("[^a-zA-Z0-9\\s]", "");
-	
-			int negCounter = 0;
-			int posCounter = 0;
-	
-			// so what we got?
-			String[] words = input.split(" ");
+		// normalize!
+		input = input.toLowerCase();
+		input = input.trim();
+		// remove all non alpha-numeric non whitespace chars
+		input = input.replaceAll("[^a-zA-Z0-9\\s]", "");
+
+		int negCounter = 0;
+		int posCounter = 0;
+
+		// so what we got?
+		String[] words = input.split(" ");
+		
+		// weighting factors:
+		int beginWeight = 3;
+		int midWeight = 1;
+		int endWeight = 5;
+
+		// check if the current word appears in our reference lists...
+		for (int i = 0; i < words.length; i++) {
+			int weight = 1;
+			if (i <= words.length / 3) {
+				weight = beginWeight;
+			} else if (i >= words.length - (words.length / 3)) {
+				weight = endWeight;
+			} else {
+				weight = midWeight;
+			}
 			
-			// weighting factors:
-			int beginWeight = 3;
-			int midWeight = 1;
-			int endWeight = 5;
-	
-			// check if the current word appears in our reference lists...
-			for (int i = 0; i < words.length; i++) {
-				int weight = 1;
-				if (i <= words.length / 3) {
-					weight = beginWeight;
-				} else if (i >= words.length - (words.length / 3)) {
-					weight = endWeight;
-				} else {
-					weight = midWeight;
-				}
-				if (posWords.contains(words[i])) {
+			for (int j = 0; j < posWords.size(); j++) {
+				if (fuzzy.Compare(words[i], posWords.toArray()[j].toString())) {
 					posCounter += weight;
 				}
-				if (negWords.contains(words[i])) {
+			}
+			
+			for (int k = 0; k < negWords.size(); k++) {
+				if (fuzzy.Compare(words[i], negWords.toArray()[k].toString())) {
 					negCounter += weight;
 				}
 			}
-	
-			// positive matches MINUS negative matches
-			int result = (posCounter - negCounter);
-	
-			// negative?
-			if (result < 0) {
-				return -1;
-				// or positive?
-			} else if (result > 0) {
-				return 1;
-			}
+		}
+
+		// positive matches MINUS negative matches
+		int result = (posCounter - negCounter);
+
+		// negative?
+		if (result < 0) {
+			return -1;
+			// or positive?
+		} else if (result > 0) {
+			return 1;
 		}
 		// neutral to the rescue!
 		return 0;

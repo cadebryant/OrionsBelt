@@ -7,7 +7,7 @@ public class Tester {
 	 */
 	public static void main(String[] args) {
 		try {
-		System.out.println(SentimentAnalysis.analyze("bad bad good bad bad good good", false, 0));
+		System.out.println(SentimentAnalysis.analyze("good good good", false, (float) 0.8));
 		} catch (Exception e) {
 			
 		}
