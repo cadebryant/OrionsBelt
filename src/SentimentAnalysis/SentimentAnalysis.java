@@ -28,7 +28,7 @@ public class SentimentAnalysis {
 	 * @throws IOException
 	 * @throws LangDetectException
 	 */
-	public static void analyze(String inputText, boolean useFuzzy, float matchThreshold) throws IOException {
+	public static int analyze(String inputText, boolean useFuzzy, float matchThreshold) throws IOException {
 
 		fuzzy = new FuzzyMatch(MatchType.Levenshtein, matchThreshold);
 		long startTime = System.currentTimeMillis();
@@ -58,6 +58,8 @@ public class SentimentAnalysis {
 		score = getSentimentScore(inputText, useFuzzy);
 		// ++ index so we won't have -1 and stuff...
 		stats[score + 1]++;
+		
+		return score;
 	}
 
 	/**
