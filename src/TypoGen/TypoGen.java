@@ -120,14 +120,20 @@ public class TypoGen {
 		}
 
 		for (String token: splitTokens) {
+			char[] tokenChars = token.toCharArray();
+
 			if (typoSets.containsKey(token)) {
 				TypoSet currentSet = typoSets.get(token);
 				outputText = outputText + currentSet.getTypo() + ' ';
 				changedWords++;
 				totalWords++;
+			} else if (tokenChars.length >= 1) {
+				if (Character.isLetterOrDigit(tokenChars[0])) {
+					outputText = outputText + token + ' ';
+					totalWords++;
+				}
 			} else {
 				outputText = outputText + token + ' ';
-				totalWords++;
 			}
 		}
 
