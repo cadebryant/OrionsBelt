@@ -131,6 +131,8 @@ public class TypoGen {
 				if (Character.isLetterOrDigit(tokenChars[0])) {
 					outputText = outputText + token + ' ';
 					totalWords++;
+				} else {
+					outputText = outputText + token + ' ';
 				}
 			} else {
 				outputText = outputText + token + ' ';
