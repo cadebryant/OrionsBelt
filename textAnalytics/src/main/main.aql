@@ -9,7 +9,7 @@ on D.text as sentiment
 from Document D;
 
 create view testSentiment as
-select udfGetSentimentScore(t.sentiment, true, 0.8) as score
+select udfAnalyzeSentiment(t.sentiment, true, 0.8) as score
 from testView t;
 
 output view testSentiment;
