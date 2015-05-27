@@ -6,6 +6,7 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import com.ibm.avatar.algebra.datamodel.Text;
 
 import FuzzyMatch.FuzzyMatch;
 import FuzzyMatch.MatchType;
@@ -28,7 +29,7 @@ public class SentimentAnalysis {
 	 * @throws IOException
 	 * @throws LangDetectException
 	 */
-	public static int analyze(String inputText, boolean useFuzzy, float matchThreshold) throws IOException {
+	public static java.lang.Integer analyze(Text inputText, java.lang.Boolean useFuzzy, java.lang.Float matchThreshold) throws IOException {
 
 		fuzzy = new FuzzyMatch(MatchType.Levenshtein, matchThreshold);
 		long startTime = System.currentTimeMillis();
@@ -55,7 +56,7 @@ public class SentimentAnalysis {
 		posReader.close();
 		
 		int score = 0;
-		score = getSentimentScore(inputText, useFuzzy);
+		score = getSentimentScore(inputText.getText(), useFuzzy);
 		// ++ index so we won't have -1 and stuff...
 		stats[score + 1]++;
 		

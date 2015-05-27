@@ -1,0 +1,14 @@
+module main;
+
+
+create function udfGetSentimentScore(
+  inputText Text  ,useFuzzy Boolean  ,matchThreshold Float)
+return Integer
+external_name 'SentimentAnalysis.jar:SentimentAnalysis.SentimentAnalysis!analyze'
+language java
+deterministic
+return null on null input
+
+;
+
+
