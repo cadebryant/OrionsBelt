@@ -43,8 +43,9 @@ public class ConvertText {
 					File UTF8File = new File(arg + "/UTF8/UTF8_" + entry.getFileName());
 
 					for (String entryLine: entryLines) {
+						String tokenizedLine = typoMaker.tokenizeText(entryLine);
 						typoText = typoText + typoMaker.insertTypos(entryLine) + '\n';
-						textUTF8 = textUTF8 + entryLine + '\n';
+						textUTF8 = textUTF8 + tokenizedLine.replaceAll("\\s+", " ") + '\n';
 					}
 
 					typoMetrics = typoMetrics + entry.getFileName() + ": " + Integer.toString(typoMaker.typoCount()) + " words were changed, which is " + Double.toString(typoMaker.typoPercentage()) + "% of the words.\n";
