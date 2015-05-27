@@ -14,7 +14,7 @@ public class ConvertText {
 	 */
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		TypoGen typoMaker = new TypoGen();
+		TypoGen typoMaker = new TypoGen(true);
 
 		for (String arg: args) {
 			Path dir = Paths.get(arg);
