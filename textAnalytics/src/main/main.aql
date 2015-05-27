@@ -1,2 +1,15 @@
 module main; 
--- TODO: Add AQL content here 
+
+create dictionary sentiments as
+('good bad ugly' );
+
+create view testView as
+extract dictionary 'sentiments'
+on D.text as sentiment
+from Document D;
+
+create view testSentiment as
+select udfGetSentimentScore(t.sentiment, true, 0.8) as score
+from testView t;
+
+output view testSentiment;
