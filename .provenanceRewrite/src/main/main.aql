@@ -19,12 +19,23 @@ create view testView as
 
 output view testView;
 
-create view testSentiment as
-  select  0.500000 as score,
+create view testView2 as
+  select  t.sentiment as sentiment,
+          1 as useFuzzy,
+          0.800000 as threshold,
           AutoID() as __auto__id,
           'STMT_TYPE_SELECT' as __stmt__type,
           t.__auto__id as testView_____sep_____t____id
   from  testView t;
+
+output view testView2;
+
+create view testSentiment as
+  select  udfAnalyzeSentiment(t.sentiment, t.useFuzzy, t.threshold) as score,
+          AutoID() as __auto__id,
+          'STMT_TYPE_SELECT' as __stmt__type,
+          t.__auto__id as testView2_____sep_____t____id
+  from  testView2 t;
 
 output view testSentiment;
 

@@ -29,8 +29,9 @@ public class SentimentAnalysis {
 	 * @throws IOException
 	 * @throws LangDetectException
 	 */
-	public static java.lang.Integer analyze(Text inputText, java.lang.Boolean useFuzzy, java.lang.Float matchThreshold) throws IOException {
+	public static java.lang.Integer analyze(Text inputText, java.lang.Integer useFuzzy, java.lang.Float matchThreshold) throws IOException {
 
+		Boolean bFuzzy = (useFuzzy == 1);
 		fuzzy = new FuzzyMatch(MatchType.Levenshtein, matchThreshold);
 		long startTime = System.currentTimeMillis();
 
@@ -56,7 +57,7 @@ public class SentimentAnalysis {
 		posReader.close();
 		
 		int score = 0;
-		score = getSentimentScore(inputText.getText(), useFuzzy);
+		score = getSentimentScore(inputText.getText(), bFuzzy);
 		// ++ index so we won't have -1 and stuff...
 		stats[score + 1]++;
 		

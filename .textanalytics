@@ -1,9 +1,10 @@
-#Wed May 13 23:08:42 EDT 2015
+#Sat May 30 16:02:31 EDT 2015
+langWare.tokenizerChoice=1
 srcTextAnalyticsPath=[P]textAnalytics/src
 general.provenance=true
+searchPath.dataPath=[W]/OrionsBelt
 pagination.isEnabled=true
 tamTextAnalyticsPath=[P]textAnalytics/bin
-searchPath.dataPath=[W]/OrionsBelt
-UseModularAQL=true
+result.rootDir=result
 pagination.numFilesPerPage=50
-langWare.tokenizerChoice=1
+UseModularAQL=true
