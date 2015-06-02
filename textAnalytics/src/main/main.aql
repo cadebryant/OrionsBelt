@@ -1,23 +1,23 @@
 module main; 
 
-create dictionary sentiments as
+create dictionary reviews as
 ('the movie was good.  test test test.  the movie was bad.');
 
 create view testView as
-extract dictionary 'sentiments'
-on D.text as sentiment
+extract dictionary 'reviews'
+on D.text as review
 from Document D;
 
 create view testView2 as
-select t.sentiment, 
-1 as useFuzzy, 
-0.8 as threshold, 
+select t.review, 
+0.2 as threshold, 
 'good good good' as goodWords, 
 'bad bad bad' as badWords
 from testView t;
 
 create view testSentiment as
-select udfAnalyzeSentiment(t.sentiment, t.useFuzzy, t.threshold, t.goodWords, t.badWords) as score
+select t.review,
+udfAnalyzeSentiment(t.review, t.threshold, t.goodWords, t.badWords) as score
 from testView2 t;
 
 output view testSentiment;

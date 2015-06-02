@@ -1,7 +1,7 @@
 module main;
 
 
-create dictionary "sentiments"
+create dictionary "reviews"
 with case insensitive
 
 as (
@@ -13,16 +13,15 @@ create view testView as
   extract AutoID() as __auto__id,
     'STMT_TYPE_EXTRACT_DICT' as __stmt__type,
     -1 as Document_____sep_____D____id,
-    dictionary 'sentiments'
-    on D.text as sentiment
+    dictionary 'reviews'
+    on D.text as review
   from Document D;
 
 output view testView;
 
 create view testView2 as
-  select  t.sentiment as sentiment,
-          1 as useFuzzy,
-          0.800000 as threshold,
+  select  t.review as review,
+          0.200000 as threshold,
           'good good good' as goodWords,
           'bad bad bad' as badWords,
           AutoID() as __auto__id,
@@ -33,7 +32,8 @@ create view testView2 as
 output view testView2;
 
 create view testSentiment as
-  select  udfAnalyzeSentiment(t.sentiment, t.useFuzzy, t.threshold, t.goodWords, t.badWords) as score,
+  select  t.review as review,
+          udfAnalyzeSentiment(t.review, t.threshold, t.goodWords, t.badWords) as score,
           AutoID() as __auto__id,
           'STMT_TYPE_SELECT' as __stmt__type,
           t.__auto__id as testView2_____sep_____t____id

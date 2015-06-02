@@ -23,6 +23,6 @@ public class FuzzyMatch {
 	{
 		float similarity = Metric.getSimilarity(phrase1, phrase2);
 		
-		return (AcceptableDistance >= similarity);
+		return (similarity >= 1 - AcceptableDistance);
 	}
 }

@@ -13,7 +13,7 @@ public class SentimentAnalysis {
 	 * @throws IOException
 	 * @throws LangDetectException
 	 */
-	public static java.lang.Integer analyze(Text inputText, java.lang.Integer useFuzzy, java.lang.Float matchThreshold, Text posWords, Text negWords) throws IOException {
+	public static java.lang.Integer analyze(Text inputText, java.lang.Float matchThreshold, Text posWords, Text negWords) throws IOException {
 		// used to store positive and negative words for scoring
 		String[] posWordList = posWords.getText().split(" ");
 		String[] negWordList = negWords.getText().split(" ");
@@ -22,11 +22,10 @@ public class SentimentAnalysis {
 		// classify]
 		int[] stats = new int[6];		
 		
-		Boolean bFuzzy = (useFuzzy == 1);
 		long startTime = System.currentTimeMillis();
 		
 		int score = 0;
-		score = getSentimentScore(inputText.getText(), bFuzzy, matchThreshold, posWordList, negWordList);
+		score = getSentimentScore(inputText.getText(), matchThreshold, posWordList, negWordList);
 		// ++ index so we won't have -1 and stuff...
 		stats[score + 1]++;
 		
@@ -43,7 +42,7 @@ public class SentimentAnalysis {
 	 * @return score int: if < 0 then -1, if > 0 then 1 otherwise 0 - we don't
 	 *         care about the actual delta
 	 */
-	private static int getSentimentScore(String input, boolean useFuzzyMatching, java.lang.Float matchThreshold, String[] posWordList, String[] negWordList) {
+	private static int getSentimentScore(String input, java.lang.Float matchThreshold, String[] posWordList, String[] negWordList) {
 		// normalize!
 		input = input.toLowerCase();
 		input = input.trim();
@@ -73,13 +72,13 @@ public class SentimentAnalysis {
 			}
 			
 			for (int j = 0; j < posWordList.length; j++) {
-				if (fuzzy.Compare(words[i], posWordList[j].toString())) {
+				if (fuzzy.Compare(words[i], posWordList[j])) {
 					posCounter += weight;
 				}
 			}
 			
 			for (int k = 0; k < negWordList.length; k++) {
-				if (fuzzy.Compare(words[i], negWordList[k].toString())) {
+				if (fuzzy.Compare(words[i], negWordList[k])) {
 					negCounter += weight;
 				}
 			}
