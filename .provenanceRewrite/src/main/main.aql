@@ -5,7 +5,7 @@ create dictionary "sentiments"
 with case insensitive
 
 as (
-  'good bad ugly'
+  'the movie was good.  test test test.  the movie was bad.'
 );
 
 
@@ -23,6 +23,8 @@ create view testView2 as
   select  t.sentiment as sentiment,
           1 as useFuzzy,
           0.800000 as threshold,
+          'good good good' as goodWords,
+          'bad bad bad' as badWords,
           AutoID() as __auto__id,
           'STMT_TYPE_SELECT' as __stmt__type,
           t.__auto__id as testView_____sep_____t____id
@@ -31,7 +33,7 @@ create view testView2 as
 output view testView2;
 
 create view testSentiment as
-  select  udfAnalyzeSentiment(t.sentiment, t.useFuzzy, t.threshold) as score,
+  select  udfAnalyzeSentiment(t.sentiment, t.useFuzzy, t.threshold, t.goodWords, t.badWords) as score,
           AutoID() as __auto__id,
           'STMT_TYPE_SELECT' as __stmt__type,
           t.__auto__id as testView2_____sep_____t____id

@@ -1,5 +1,5 @@
 module main; 
-create function udfAnalyzeSentiment(inputText Text, useFuzzy Integer, matchThreshold Float)
+create function udfAnalyzeSentiment(inputText Text, useFuzzy Integer, matchThreshold Float, posWords Text, negWords Text)
 return Integer
 external_name 'SentimentAnalysis.jar:SentimentAnalysis.SentimentAnalysis!analyze'
 language java
