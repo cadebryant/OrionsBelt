@@ -9,22 +9,23 @@ public class ConvertText {
 	/**
 	 * @param args
 	 * **COMMAND LINE ARGUMENTS FOR CONVERTTEXT**
-	 * *Use dataset directories as your command line arguments.
-	 * *For example: C:\txt_sentoken\neg C:\txt_sentoken\pos
+	 * *Use the typo rate as your first command line argument.
+	 * *Use dataset directories as your remaining command line arguments.
+	 * *For example: 100 C:\txt_sentoken\neg C:\txt_sentoken\pos
 	 */
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		TypoGen typoMaker = new TypoGen(true);
+		TypoGen typoMaker = new TypoGen(Integer.parseInt(args[0]));
 
-		for (String arg: args) {
-			Path dir = Paths.get(arg);
-			Path typoDir = Paths.get(arg + "/typo");
-			Path UTF8Dir = Paths.get(arg + "/UTF8");
+		for (int i = 1; i < args.length; i++) {
+			Path dir = Paths.get(args[i]);
+			Path typoDir = Paths.get(args[i] + "/typo_" + args[0]);
+			Path UTF8Dir = Paths.get(args[i] + "/UTF8");
 			int typoSum = 0;
 			int docCount = 0;
 			double percentSum = 0.0;
 			String typoMetrics = "";
-			File metricsFile = new File(arg + "_typo_metrics.txt");
+			File metricsFile = new File(args[i] + "_typo_metrics_" + args[0] + ".txt");
 
 			try {
 				Files.createDirectories(typoDir);
@@ -39,8 +40,8 @@ public class ConvertText {
 					List<String> entryLines = Files.readAllLines(entry, Charset.defaultCharset());
 					String typoText = "";
 					String textUTF8 = "";
-					File typoFile = new File(arg + "/typo/typo_" + entry.getFileName());
-					File UTF8File = new File(arg + "/UTF8/UTF8_" + entry.getFileName());
+					File typoFile = new File(args[i] + "/typo_" + args[0] + "/typo_" + args[0] + '_' + entry.getFileName());
+					File UTF8File = new File(args[i] + "/UTF8/UTF8_" + entry.getFileName());
 
 					for (String entryLine: entryLines) {
 						String tokenizedLine = typoMaker.tokenizeText(entryLine);

@@ -1,7 +1,7 @@
 package TypoGen;
 
 /* **HOW TO USE TYPOGEN**
- * TypoGen typoMaker = new TypoGen();
+ * TypoGen typoMaker = new TypoGen(tokenizeOrNot, typoRate);
  * String outputText = typoMaker.insertTypos(inputText);
  */
 import java.util.*;
@@ -21,12 +21,21 @@ public class TypoGen {
 	private boolean tokenize;
 	private int changedWords;
 	private int totalWords;
+	private int typoRate;
 
 	public TypoGen() {
-		this(false);
+		this(true, 100);
 	}
 
 	public TypoGen(boolean onOrOff) {
+		this(onOrOff, 100);
+	}
+
+	public TypoGen(int selectedRate) {
+		this(true, selectedRate);
+	}
+
+	public TypoGen(boolean onOrOff, int selectedRate) {
 		typoFIS = TypoGen.class.getResourceAsStream("typos1.txt");
 		typos2 = TypoGen.class.getResourceAsStream("typos2.txt");
 		typoData = new ArrayList<String>();
@@ -36,6 +45,7 @@ public class TypoGen {
 		tokenize = onOrOff;
 		changedWords = 0;
 		totalWords = 0;
+		typoRate = selectedRate;
 
 		try {
 			typoISR = new InputStreamReader(typoFIS);
@@ -124,9 +134,15 @@ public class TypoGen {
 
 			if (typoSets.containsKey(token)) {
 				TypoSet currentSet = typoSets.get(token);
-				outputText = outputText + currentSet.getTypo() + ' ';
-				changedWords++;
-				totalWords++;
+				String typoWord = currentSet.getTypo(typoRate, token);
+				outputText = outputText + typoWord + ' ';
+
+				if (!token.equals(typoWord)) {
+					changedWords++;
+					totalWords++;
+				} else {
+					totalWords++;
+				}
 			} else if (tokenChars.length >= 1) {
 				if (Character.isLetterOrDigit(tokenChars[0])) {
 					outputText = outputText + token + ' ';
