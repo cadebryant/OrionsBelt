@@ -11,18 +11,15 @@ from file 'MovieReviews/negative-words.txt';
 
 create view testView as
 select * from
-(extract dictionary 'posWords' on D.text as posWords from Document D) posWords;
+(extract dictionary 'reviews' on D.text as reviews from Document D) reviews,
+(extract dictionary 'posWords' on D.text as posWords from Document D) posWords,
+(extract dictionary 'negWords' on D.text as negWords from Document D) negWords;
 
-
-/*
-create view testView2 as
-select t.textData
-from testView t;
 
 create view testSentiment as
-select t.review,
-udfAnalyzeSentiment(t.review, t.threshold, t.goodWords, t.badWords) as score
-from testView2 t;
-*/
-output view testView;
+select t.reviews,
+udfAnalyzeSentiment(t.reviews, 0.8, t.posWords, t.negWords) as score
+from testView t;
+
+output view testSentiment;
 

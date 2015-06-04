@@ -17,13 +17,29 @@ with case insensitive
 
 
 create view testView as
-  select  posWords.posWords as posWords,
+  select  reviews.reviews as reviews,
+          posWords.posWords as posWords,
+          negWords.negWords as negWords,
           AutoID() as __auto__id,
           'STMT_TYPE_SELECT' as __stmt__type,
-          posWords.__auto__id as __Subquery__1__Temp_____sep_____posWords____id
-  from  __Subquery__1__Temp posWords;
+          reviews.__auto__id as __Subquery__1__Temp_____sep_____reviews____id,
+          posWords.__auto__id as __Subquery__2__Temp_____sep_____posWords____id,
+          negWords.__auto__id as __Subquery__3__Temp_____sep_____negWords____id
+  from  __Subquery__1__Temp reviews,
+        __Subquery__2__Temp posWords,
+        __Subquery__3__Temp negWords;
 
 output view testView;
+
+create view testSentiment as
+  select  t.reviews as reviews,
+          udfAnalyzeSentiment(t.reviews, 0.800000, t.posWords, t.negWords) as score,
+          AutoID() as __auto__id,
+          'STMT_TYPE_SELECT' as __stmt__type,
+          t.__auto__id as testView_____sep_____t____id
+  from  testView t;
+
+output view testSentiment;
 
 
 
@@ -31,9 +47,29 @@ create view __Subquery__1__Temp as
   extract AutoID() as __auto__id,
     'STMT_TYPE_EXTRACT_DICT' as __stmt__type,
     -1 as Document_____sep_____D____id,
+    dictionary 'reviews'
+    on D.text as reviews
+  from Document D;
+
+output view __Subquery__1__Temp;
+
+create view __Subquery__2__Temp as
+  extract AutoID() as __auto__id,
+    'STMT_TYPE_EXTRACT_DICT' as __stmt__type,
+    -1 as Document_____sep_____D____id,
     dictionary 'posWords'
     on D.text as posWords
   from Document D;
 
-output view __Subquery__1__Temp;
+output view __Subquery__2__Temp;
+
+create view __Subquery__3__Temp as
+  extract AutoID() as __auto__id,
+    'STMT_TYPE_EXTRACT_DICT' as __stmt__type,
+    -1 as Document_____sep_____D____id,
+    dictionary 'negWords'
+    on D.text as negWords
+  from Document D;
+
+output view __Subquery__3__Temp;
 
