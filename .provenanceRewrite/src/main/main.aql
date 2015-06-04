@@ -6,27 +6,34 @@ with case insensitive
 ;
 
 
+create dictionary "posWords" from file 'MovieReviews/positive-words.txt'
+with case insensitive
+;
+
+
+create dictionary "negWords" from file 'MovieReviews/negative-words.txt'
+with case insensitive
+;
+
+
 create view testView as
-  extract AutoID() as __auto__id,
-    'STMT_TYPE_EXTRACT_DICT' as __stmt__type,
-    -1 as Document_____sep_____D____id,
-    dictionary 'reviews'
-    on D.text as review
-  from Document D;
+  select  posWords.posWords as posWords,
+          AutoID() as __auto__id,
+          'STMT_TYPE_SELECT' as __stmt__type,
+          posWords.__auto__id as __Subquery__1__Temp_____sep_____posWords____id
+  from  __Subquery__1__Temp posWords;
 
 output view testView;
 
-create view testView2 as
-  select  t.review as review,
-          0.200000 as threshold,
-          'good good good' as goodWords,
-          'bad bad bad' as badWords,
-          AutoID() as __auto__id,
-          'STMT_TYPE_SELECT' as __stmt__type,
-          t.__auto__id as testView_____sep_____t____id
-  from  testView t;
-
-output view testView2;
 
 
+create view __Subquery__1__Temp as
+  extract AutoID() as __auto__id,
+    'STMT_TYPE_EXTRACT_DICT' as __stmt__type,
+    -1 as Document_____sep_____D____id,
+    dictionary 'posWords'
+    on D.text as posWords
+  from Document D;
+
+output view __Subquery__1__Temp;
 

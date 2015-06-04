@@ -3,22 +3,26 @@ module main;
 create dictionary reviews
 from file 'MovieReviews/Pos/cv000_29590.txt';
 
-create view testView as
-extract dictionary 'reviews'
-on D.text as review
-from Document D;
+create dictionary posWords
+from file 'MovieReviews/positive-words.txt';
 
-create view testView2 as
-select t.review, 
-0.2 as threshold, 
-'good good good' as goodWords, 
-'bad bad bad' as badWords
-from testView t;
+create dictionary negWords
+from file 'MovieReviews/negative-words.txt';
+
+create view testView as
+select * from
+(extract dictionary 'posWords' on D.text as posWords from Document D) posWords;
+
+
 /*
+create view testView2 as
+select t.textData
+from testView t;
+
 create view testSentiment as
 select t.review,
 udfAnalyzeSentiment(t.review, t.threshold, t.goodWords, t.badWords) as score
 from testView2 t;
 */
-output view testView2;
+output view testView;
 
