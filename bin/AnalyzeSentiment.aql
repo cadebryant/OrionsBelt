@@ -1,0 +1,7 @@
+module main; 
+create function udfAnalyzeSentiment(inputText Text, matchThreshold Float, posWords Text, negWords Text)
+return Integer
+external_name 'SentimentAnalysis.jar:SentimentAnalysis.SentimentAnalysis!analyze'
+language java
+deterministic
+return null on null input;

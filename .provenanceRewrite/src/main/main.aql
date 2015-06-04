@@ -1,12 +1,9 @@
 module main;
 
 
-create dictionary "reviews"
+create dictionary "reviews" from file 'MovieReviews/Pos/cv000_29590.txt'
 with case insensitive
-
-as (
-  'the movie was good.  test test test.  the movie was bad.'
-);
+;
 
 
 create view testView as
@@ -30,16 +27,6 @@ create view testView2 as
   from  testView t;
 
 output view testView2;
-
-create view testSentiment as
-  select  t.review as review,
-          udfAnalyzeSentiment(t.review, t.threshold, t.goodWords, t.badWords) as score,
-          AutoID() as __auto__id,
-          'STMT_TYPE_SELECT' as __stmt__type,
-          t.__auto__id as testView2_____sep_____t____id
-  from  testView2 t;
-
-output view testSentiment;
 
 
 
