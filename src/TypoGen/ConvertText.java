@@ -69,9 +69,10 @@ public class ConvertText {
 						docCount++;
 						typoMaker.resetCounts();
 						byte[] typoFileBytes = null;
+						String typoText4 = typoText2.replaceAll("[ ]+", " ").replaceAll(" \n", "\n").trim();
 
 						try {
-							typoFileBytes = UnicodeUtils.convert(typoText2.getBytes(Charset.defaultCharset()), "UTF-8");
+							typoFileBytes = UnicodeUtils.convert(typoText4.getBytes(Charset.defaultCharset()), "UTF-8");
 						} catch (Exception b1) {
 							// TODO Auto-generated catch block
 							b1.printStackTrace();
