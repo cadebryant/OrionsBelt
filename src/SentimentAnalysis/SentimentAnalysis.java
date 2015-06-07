@@ -20,14 +20,40 @@ public class SentimentAnalysis {
 
 		// keep some stats! [-1 / 0 / 1 / no text to
 		// classify]
-		int[] stats = new int[6];		
+		//int[] stats = new int[6];		
 		
 		long startTime = System.currentTimeMillis();
 		
+		String[] segments = inputText.getText().split("\n\r");
+		
+		int len = segments.length;
+		int last = len-1;
+		FuzzyMatch matcher = new FuzzyMatch(MatchType.Levenshtein, matchThreshold);
+		
+		// weighting factors:
+		java.lang.Integer beginWeight = 3;
+		java.lang.Integer midWeight = 1;
+		java.lang.Integer endWeight = 5;
+
 		int score = 0;
-		score = getSentimentScore(inputText.getText(), matchThreshold, posWordList, negWordList);
+		for (int s = 0; s <= last; s++) {
+			java.lang.Integer weight;
+			if (s == 0) {
+				weight = beginWeight;
+			} else if (s == last) {
+				weight = endWeight;
+			} else {
+				weight = midWeight;
+			}
+			float segmentPolarity = getSentimentScore(inputText.getText(), matcher, posWordList, negWordList);
+			
+			if (segmentPolarity > 0.0)
+				score += weight;
+			else if (segmentPolarity < 0.0);
+				score -= weight;
+		}
 		// ++ index so we won't have -1 and stuff...
-		stats[score + 1]++;
+		//stats[score + 1]++;		// pretty sure that this is where your exception was coming from
 		
 		return score;
 	}
@@ -42,37 +68,50 @@ public class SentimentAnalysis {
 	 * @return score int: if < 0 then -1, if > 0 then 1 otherwise 0 - we don't
 	 *         care about the actual delta
 	 */
-	private static int getSentimentScore(String input, java.lang.Float matchThreshold, String[] posWordList, String[] negWordList) {
+	private static float getSentimentScore(String input, FuzzyMatch matcher, String[] posWordList, String[] negWordList) {
 		// normalize!
 		input = input.toLowerCase();
 		input = input.trim();
 		// remove all non alpha-numeric non whitespace chars
 		input = input.replaceAll("[^a-zA-Z0-9\\s]", "");
-		FuzzyMatch fuzzy = new FuzzyMatch(MatchType.Levenshtein, matchThreshold);
 		int negCounter = 0;
 		int posCounter = 0;
 
 		// so what we got?
 		String[] words = input.split(" ");
 		
-		// weighting factors:
-		int beginWeight = 3;
-		int midWeight = 1;
-		int endWeight = 5;
+		float lastWordWasNotSimilarity = (float) 0.0;
+		boolean lastWordWasNot = false;
 
 		// check if the current word appears in our reference lists...
 		for (int i = 0; i < words.length; i++) {
-			int weight = 1;
-			if (i <= words.length / 3) {
-				weight = beginWeight;
-			} else if (i >= words.length - (words.length / 3)) {
-				weight = endWeight;
-			} else {
-				weight = midWeight;
-			}
 			
-			posCounter += (fuzzy.MatchInArray(words[i], posWordList) - fuzzy.MatchesNot(words[i])) * weight;
-			negCounter += (fuzzy.MatchInArray(words[i], negWordList) - fuzzy.MatchesNot(words[i])) * weight;
+			float thisWordWasNotSimilarity = matcher.MatchesNot(words[i]));	
+			boolean isNot = (thisWordWasNotSimilarity > 0.0);			
+			if (isNot)
+			{
+				lastWordWasNot = true;
+				lastWordWasNotSimilarity = thisWordWasNotSimilarity;
+				continue;	// SKIP "NOT"; it will be weighted with the next word AND reverse the polarity
+			}
+			float posSimilarity = matcher.MatchInArray(words[i], posWordList);
+			float negSimilarity = matcher.MatchInArray(words[i], posWordList);
+			
+			if (lastWordWasNot)
+			{
+				if (posSimilarity > 0.0)
+					posCounter -= (posSimilarity * lastWordWasNotSimilarity);
+				if (negSimilarity > 0.0)
+					negCounter += (negSimilarity * lastWordWasNotSimilarity);
+				lastWordWasNot = false;
+			}
+			else
+			{
+				if (posSimilarity > 0.0)
+					posCounter += posSimilarity;
+				if (negSimilarity > 0.0)
+					negCounter -= negSimilarity;
+			}
 		}
 
 		// positive matches MINUS negative matches
