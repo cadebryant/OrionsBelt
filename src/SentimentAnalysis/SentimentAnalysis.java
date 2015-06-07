@@ -71,17 +71,8 @@ public class SentimentAnalysis {
 				weight = midWeight;
 			}
 			
-			for (int j = 0; j < posWordList.length; j++) {
-				if (fuzzy.Compare(words[i], posWordList[j])) {
-					posCounter += weight;
-				}
-			}
-			
-			for (int k = 0; k < negWordList.length; k++) {
-				if (fuzzy.Compare(words[i], negWordList[k])) {
-					negCounter += weight;
-				}
-			}
+			posCounter += (fuzzy.MatchInArray(words[i], posWordList) - fuzzy.MatchesNot(words[i])) * weight;
+			negCounter += (fuzzy.MatchInArray(words[i], negWordList) - fuzzy.MatchesNot(words[i])) * weight;
 		}
 
 		// positive matches MINUS negative matches
