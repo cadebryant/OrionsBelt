@@ -86,7 +86,7 @@ public class SentimentAnalysis {
 		// check if the current word appears in our reference lists...
 		for (int i = 0; i < words.length; i++) {
 			
-			float thisWordWasNotSimilarity = matcher.MatchesNot(words[i]));	
+			float thisWordWasNotSimilarity = matcher.MatchesNot(words[i]);	
 			boolean isNot = (thisWordWasNotSimilarity > 0.0);			
 			if (isNot)
 			{
