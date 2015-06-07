@@ -95,7 +95,7 @@ public class SentimentAnalysis {
 				continue;	// SKIP "NOT"; it will be weighted with the next word AND reverse the polarity
 			}
 			float posSimilarity = matcher.MatchInArray(words[i], posWordList);
-			float negSimilarity = matcher.MatchInArray(words[i], posWordList);
+			float negSimilarity = matcher.MatchInArray(words[i], negWordList);
 			
 			if (lastWordWasNot)
 			{
