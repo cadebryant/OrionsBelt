@@ -47,12 +47,10 @@ public class SentimentAnalysis {
 			} else {
 				weight = midWeight;
 			}
-			float segmentPolarity = getSentimentScore(segment, matcher, posWordList, negWordList);
+			int segmentPolarity = getSentimentScore(segment, matcher, posWordList, negWordList);
 			
-			if (segmentPolarity > 0.0)
-				score += weight;
-			else if (segmentPolarity < 0.0);
-				score -= weight;
+			if (segmentPolarity != 0)
+				score += (weight * segmentPolarity);
 		}
 		// ++ index so we won't have -1 and stuff...
 		//stats[score + 1]++;		// pretty sure that this is where your exception was coming from
@@ -70,14 +68,14 @@ public class SentimentAnalysis {
 	 * @return score int: if < 0 then -1, if > 0 then 1 otherwise 0 - we don't
 	 *         care about the actual delta
 	 */
-	private static float getSentimentScore(String input, FuzzyMatch matcher, String[] posWordList, String[] negWordList) {
+	private static int getSentimentScore(String input, FuzzyMatch matcher, String[] posWordList, String[] negWordList) {
 		// normalize!
 		input = input.toLowerCase();
 		input = input.trim();
 		// remove all non alpha-numeric non whitespace chars
 		input = input.replaceAll("[^a-zA-Z0-9\\s]", "");
-		int negCounter = 0;
-		int posCounter = 0;
+		float negAccumulator = (float) 0.0;
+		float posAccumulator = (float) 0.0;
 
 		// so what we got?
 		String[] words = input.split(" ");
@@ -102,28 +100,28 @@ public class SentimentAnalysis {
 			if (lastWordWasNot)
 			{
 				if (posSimilarity > 0.0)
-					posCounter -= (posSimilarity * lastWordWasNotSimilarity);
+					posAccumulator -= (posSimilarity * lastWordWasNotSimilarity);
 				if (negSimilarity > 0.0)
-					negCounter += (negSimilarity * lastWordWasNotSimilarity);
+					negAccumulator += (negSimilarity * lastWordWasNotSimilarity);
 				lastWordWasNot = false;
 			}
 			else
 			{
 				if (posSimilarity > 0.0)
-					posCounter += posSimilarity;
+					posAccumulator += posSimilarity;
 				if (negSimilarity > 0.0)
-					negCounter -= negSimilarity;
+					negAccumulator -= negSimilarity;
 			}
 		}
 
 		// positive matches MINUS negative matches
-		int result = (posCounter - negCounter);
+		float result = (posAccumulator - negAccumulator);
 
 		// negative?
-		if (result < 0) {
+		if (result < 0.0) {
 			return -1;
 			// or positive?
-		} else if (result > 0) {
+		} else if (result > 0.0) {
 			return 1;
 		}
 		// neutral to the rescue!
