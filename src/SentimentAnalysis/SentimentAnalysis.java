@@ -1,10 +1,10 @@
 package SentimentAnalysis;
 
-import java.io.IOException;
-import com.ibm.avatar.algebra.datamodel.Text;
-
+// import java.io.IOException;
 import FuzzyMatch.FuzzyMatch;
 import FuzzyMatch.MatchType;
+import com.ibm.avatar.algebra.datamodel.Text;
+
 
 public class SentimentAnalysis {
 
@@ -13,7 +13,7 @@ public class SentimentAnalysis {
 	 * @throws IOException
 	 * @throws LangDetectException
 	 */
-	public static java.lang.Integer analyze(Text inputText, java.lang.Float matchThreshold, Text posWords, Text negWords) throws IOException {
+	public static java.lang.Integer analyze(Text inputText, java.lang.Float matchThreshold, Text posWords, Text negWords) /*throws IOException*/ {
 		// used to store positive and negative words for scoring
 		String[] posWordList = posWords.getText().split(" ");
 		String[] negWordList = negWords.getText().split(" ");

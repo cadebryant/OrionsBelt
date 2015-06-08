@@ -1,6 +1,7 @@
 package FuzzyMatch;
 
-import uk.ac.shef.wit.simmetrics.similaritymetrics.*;
+import FuzzyMatch.MatchType;
+import uk.ac.shef.wit.simmetrics.similaritymetrics.*;;
 
 public class FuzzyMatch
 {	
@@ -10,12 +11,12 @@ public class FuzzyMatch
     {
         switch (type)
         {
-            case Levenshtein:	Metric = new Levenshtein();		break;
+            case Levenshtein:		Metric = new Levenshtein();			break;
             case CosineSimilarity:	Metric = new CosineSimilarity();	break;
             case EuclideanDistance: Metric = new EuclideanDistance();	break;
-            case MongeElkan:		Metric = new MongeElkan();		break;
-            case JaroWinkler:	Metric = new JaroWinkler();		break;
-            default:		Metric = new Levenshtein();		break;
+            case MongeElkan:		Metric = new MongeElkan();			break;
+            case JaroWinkler:		Metric = new JaroWinkler();			break;
+            default:				Metric = new Levenshtein();			break;
         }
         AcceptableDistance = threshhold;
     }
