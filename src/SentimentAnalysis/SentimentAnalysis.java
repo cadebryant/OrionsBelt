@@ -37,6 +37,8 @@ public class SentimentAnalysis {
 
 		int score = 0;
 		for (int s = 0; s <= last; s++) {
+            String segment = segments[s];
+                        
 			java.lang.Integer weight;
 			if (s == 0) {
 				weight = beginWeight;
@@ -45,7 +47,7 @@ public class SentimentAnalysis {
 			} else {
 				weight = midWeight;
 			}
-			float segmentPolarity = getSentimentScore(inputText.getText(), matcher, posWordList, negWordList);
+			float segmentPolarity = getSentimentScore(segment, matcher, posWordList, negWordList);
 			
 			if (segmentPolarity > 0.0)
 				score += weight;
