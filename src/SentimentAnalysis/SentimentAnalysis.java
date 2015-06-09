@@ -68,7 +68,7 @@ public class SentimentAnalysis {
 	 * @return score int: if < 0 then -1, if > 0 then 1 otherwise 0 - we don't
 	 *         care about the actual delta
 	 */
-	private static int getSentimentScore(String input, FuzzyMatch matcher, String[] posWordList, String[] negWordList) {
+	public static int getSentimentScore(String input, FuzzyMatch matcher, String[] posWordList, String[] negWordList) {
 		// normalize!
 		input = input.toLowerCase();
 		input = input.trim();
