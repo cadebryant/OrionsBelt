@@ -82,11 +82,16 @@ public class SentimentAnalysis {
 		
 		float lastWordWasNotSimilarity = (float) 0.0;
 		boolean lastWordWasNot = false;
+		String thisWord;
+		String lastWord = null;
 
 		// check if the current word appears in our reference lists...
 		for (int i = 0; i < words.length; i++) {
 			
-			float thisWordWasNotSimilarity = matcher.MatchesNot(words[i]);	
+			thisWord = words[i];
+			float thisWordWasNotSimilarity = matcher.MatchesNot(lastWord, thisWord);
+			lastWord = thisWord;
+			
 			boolean isNot = (thisWordWasNotSimilarity > 0.0);			
 			if (isNot)
 			{
@@ -94,8 +99,8 @@ public class SentimentAnalysis {
 				lastWordWasNotSimilarity = thisWordWasNotSimilarity;
 				continue;	// SKIP "NOT"; it will be weighted with the next word AND reverse the polarity
 			}
-			float posSimilarity = matcher.MatchInArray(words[i], posWordList);
-			float negSimilarity = matcher.MatchInArray(words[i], negWordList);
+			float posSimilarity = matcher.MatchInArray(thisWord, posWordList);
+			float negSimilarity = matcher.MatchInArray(thisWord, negWordList);
 			
 			if (lastWordWasNot)
 			{

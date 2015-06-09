@@ -29,9 +29,12 @@ public class FuzzyMatch
 
         return (float) 0.0;
     }
-    public float MatchesNot(String word)
+    public float MatchesNot(String prev, String word)
     {
-        return Compare(word, "not");
+    	if ( (prev == "'") && (word == "nt") )
+	    	return (float) 1.0;  // matches contractions like don't or can't (but not with fuzzy logic)
+
+    	return Compare(word, "not");
     }
     public float MatchInArray(String word, String[] array)
     {
