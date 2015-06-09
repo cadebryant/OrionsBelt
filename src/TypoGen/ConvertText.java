@@ -40,7 +40,7 @@ public class ConvertText {
 						List<String> entryLines = Files.readAllLines(entry, Charset.defaultCharset());
 						String typoText = "";
 						String typoText2 = "";
-						String[] pivotWords = {"and", "but", "although", "however", "then", "though", "yet"};
+						String[] pivotWords = {"and", "adn", "anbd", "annd", "although", "allthough", "althought", "altough", "but", "bu", "however", "howver", "then", "hten", "thn", "thne", "though", "yet", "yot"};
 						File typoFile = new File(arg + "/typos." + typoRate + '/' + entry.getFileName());
 
 						for (String entryLine: entryLines) {
@@ -51,15 +51,15 @@ public class ConvertText {
 						for (char tc: typoText.toCharArray()) {
 							if (Character.isLetterOrDigit(tc)) {
 								typoText2 = typoText2 + tc;
-							} else if (tc == ' ') {
+							} else if (tc == ' ' || tc == '\'') {
 								typoText2 = typoText2 + tc;
 							} else {
-								typoText2 = typoText2 + '\n' + tc;
+								typoText2 = typoText2 + "\n\r" + tc;
 							}
 						}
 
 						for (String pivotWord: pivotWords) {
-							String typoText3 = typoText2.replaceAll(pivotWord, '\n' + pivotWord);
+							String typoText3 = typoText2.replaceAll(' ' + pivotWord + ' ', "\n\r" + pivotWord + ' ');
 							typoText2 = typoText3;
 						}
 
