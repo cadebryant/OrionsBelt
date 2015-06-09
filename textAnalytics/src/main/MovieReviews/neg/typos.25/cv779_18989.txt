@@ -1,32 +1,31 @@
 ﻿9
-: its pathetic attempt at
-" improving
-" onthe a shakespeare classic
-. 8
-: its just anyother piece of teen fluff
-. 7
-: kids in high skool are not that witty
-. 6
-: tje wittiness is nto witty enough
-. 5
-: the comedy is not funny
-. 4
-: the acting is poore
-. 3
-: the music
-. 2
-: the poster
-. 1
-: its worse than she
-' s all that
-! 10
-= a classic 9
-= borderline classic 8
-= excellant 7
-= good 6
-= better than average 5
-= average 4
-= disappointing 3
-= poor 2
-= awful 1
-= a crap classic
+: its pathetic attempt at
+" improving
+" on a shakespeare classic
+. 8
+: its just another piece of teen fluff
+. 7
+: kids in high school are not thyat witty
+. 6
+: the wittiness isnt not witty enough
+. 5
+: yhe comedy is not funny
+. 4
+: the acting is poor
+. 3
+: the music
+. 2
+: the poster
+. 1
+: its worse than she ' s all that
+! 10
+= a clasic 9
+= borderline clasic 8
+= excellent 7
+= good 6
+= better than average 5
+= averege 4
+= disapointing 3
+= poor 2
+= awful 1
+= a crap classic

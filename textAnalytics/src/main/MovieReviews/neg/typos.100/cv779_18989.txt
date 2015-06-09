@@ -1,32 +1,31 @@
 ﻿9
-: its pathetic atempt at
-" inproving
-" onthe a shakespeare clasic
-. 8
-: its jstu anyother peice ofthe teen fluff
-. 7
-: kids inspite high skool are nto tyhat witty
-. 6
-: teh wittiness isnt nto witty anough
-. 5
-: thge comedy isnt nto funny
-. 4
-: tghe acting isnt poore
-. 3
-: teh music
-. 2
-: tghe poster
-. 1
-: its worse thna she
-' s all thast
-! 10
-= a clasic 9
-= borderline clasic 8
-= excellant 7
-= ogod 6
-= better thna averege 5
-= averege 4
-= disapointing 3
-= poore 2
-= awful 1
-= a crap clasic
+: its pathetic attemp at
+" inproving
+" onthe a shakespeare clasic
+. 8
+: its jstu anohter peice ofthe teen fluff
+. 7
+: kids inwhich high skool are nto tht witty
+. 6
+: teh wittiness isnt nto witty anough
+. 5
+: tjhe comedy isnt nto funny
+. 4
+: hte acting isnt poore
+. 3
+: thge music
+. 2
+: thte poster
+. 1
+: its worse thna she ' s all thgat
+! 10
+= a clasic 9
+= borderline clasic 8
+= excelent 7
+= ogod 6
+= better tahn averege 5
+= averege 4
+= disapointing 3
+= poore 2
+= awful 1
+= a crap clasic

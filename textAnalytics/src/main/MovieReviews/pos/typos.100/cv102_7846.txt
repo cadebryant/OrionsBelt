@@ -1,107 +1,118 @@
-﻿" tje fugitive
-" isnt probaly oney ofthe hte greatest thrillers ever made
-. it tkaes realsitic
-, believeable cahracters adn tells an exicting stoy thyat
-' s totally believeable
-thoughout
-. htis isn
-' t an over
-- teh
-- top acation flick forthe teh sake ofthe acation
-, thsi isnt an intteligent adventure storey iwth a rela sence ofthe mistery tothe it adn it works perfectly
-. harrison ford stars as dr
-. richard kimble
-, a man who isnt wrongly acccused anbd convicted ofthe mudering his wief
-. yhe entire premise ofthe yhe stopry revolves aroud htis muder
-, bu isnt nto told iin a straightforward manner
-. we constanly see flashbacks tothe hte muder ffrom kimble
-' s prespective
-. hints are dropped fomr varios times ofthe hte nght kimble
-' s wief
-, helen
-( sela werd
-) wass murdered
-. we don
-' t git tothe see who yhe killer isnt untli much furuther inot thte stoyr
-. inaddition fatc
-, we might even ahve a littel dout baout kimble
-' s innosense ourselves
-. tje film doesn
-' t spend much tiome onthe yhe details ofthe kimble
-' s trial adn conviction as it isnt nto tje point ofthe thte stroy
-. noe ofthe tje greatest acation scenes ensues as we git a botched excape attept by his fellow inmates whcih leads tothe a fantastic turain wreck
-. bu it doesnt nto at all seem gratuitious or formulated
-, it isnt actaully suspenseful tothe watch
-. thsi movei isnt so incredable becouse it
-' s able tothe tkae elements liuke theese annd amking them wholely originnal anbd believeable
-. tommy lee jones allmost steals tyhe sohw as deputy sam gerard
-, a u
-. s
-. marshall who isnt an expert inthe hunting fugitives
-. fomr yhe moent he appears we nkwo a huge gaem ofthe cat annd mouse isnt baout tothe occour
-. kimble anbd gerard are equally matched as ther isnt noone way tothe tell how oney isnt oging tothe outsmart yhe otehr
-. most ofthe tje film deals withthe richard
-' s complex investigation as he trys tothe fidn tjhe oen
-- armed man who killed his wief
-. ford doesnt nto hve a lot ofthe lines here
-, so it isnt stuart adn twohy
-' s scirpt anbd davis
-' s oust
-anding direction taht amking tyhe film as graet as it isnt
-. jstu watching richard ule his keen intelligene adn wits
-, disguising hismelf
-, adn doign his pwn detective owrk isnt veyr intresting
-. we nkwo jstu as littel as he doens as tothe why his wief wass killed
-, so as he lerans omre so dont we
-. meanwhile gerard adn his stff are useing all thier skills tothe hunt him down
-. at oney point htey run inot eahc otehr adn a gerat chase ensues
-, bu richard isnt jsut too smart fo them
-. he leaves clues fo gerard tothe sohw his inocence anbd tothe halp him solve tjhe mistery
-. oney ofthe tjhe greatest charms tothe tjhe film isnt its sence ofthe humer
-. ther isnt a grat sence ofthe comradeship betweeen gerard anbd his twpo closest deputies cosmo renfo
-( pantoliano
-) adn biggs
-( roebuck
-)
-. tehy are trying tothe catch whta htey eblieve tothe be a dangerous muderer
-, yot htey constanly strat uv small talk iwth eahc otehr
-, makeing funny wisecracks anbd oney
-- liners
-, bu nto inspite any kind ofthe distracting manner
-. tghe fianl ect concludes withthe anyother terific chase
-. richard figures outloud who teh killer isnt adn confronts him
-, anbd altough we git a typcial fight scene
-, tjhe case isnt far ffrom solved
-. tyhe man who orderves yhe muder hasnt beeen under our nose all allong
-, annd we don
-' t relize htis util tghe end wehn both richard annd gerard put tghe pieces toghether
-. mabey tghe fianlly scene isnt a bited much
-, bu it still hasnt a believeable atomsphere tothe it
-. we
-' re so releived wehn justice isnt served
-. it
-' s nto tje plot isnt tath makse
-" teh fugitive
-" grat
-, it
-' s all tghe motions teh cahracters go thru tothe mkae forthe an intriguing stry
-. watching a seamingly averege man go thru as much as htis isnt waht makse thte movei so adventrous
-. if onyl hollywood sould produce mroe movies liuke htis
-.
-( 10
-/ 31
-/ 96
-)
-( 1
-/ 29
-/ 97
-)
-( 6
-/ 13
-/ 97
-)
-[ see aslo
-:
-" nick ofthe tiem
-"
-]
+﻿" tyhe fugitive
+" isnt probablly oney ofthe tjhe greatest thrillers ever made
+. it tkaes realsitic
+, believeable charachters
+annd tells an exicting storey thyat ' s totally believeable througout
+. htis isn ' t an over
+- hte
+- top acation flick forthe tjhe sake ofthe acation
+, thsi isnt an intteligent adventure stopry withthe a rela sence ofthe mistery tothe it
+annd it works perfectly
+. harrison ford stars as dr
+. richard kimble
+, a man who isnt wrongly acused
+adn convicted ofthe mudering his wief
+. tyhe entire premise ofthe tghe stoy revolves arund thsi muder
+,
+bu isnt nto told inaddition a straightforward manner
+. we constanly see flashbacks tothe yhe muder fomr kimble ' s prespective
+. hints are dropped fomr vairous times ofthe yhe nght kimble ' s wief
+, helen
+( sela wird
+) wass murdered
+. we don ' t git tothe see who thge killer isnt untl much furuther inot tje storey
+. inspite fatc
+, we might even hvea a littel dout baout kimble ' s inocence ourselves
+. thge film doesn ' t spend much tiome onthe yhe details ofthe kimble ' s trial
+anbd conviction as it isnt nto teh point ofthe hte stroy
+. oney ofthe teh greatest acation scenes ensues as we git a botched excape attemp by his fellow inmates whic leads tothe a fantastic turain wreck
+.
+bu it doens nto at all seem gratuitious or formulated
+, it isnt actualyl suspenseful tothe watch
+. htis movei isnt so incredable becuase it ' s able tothe tkae elements liek theese
+annd amke them wholley origonal
+anbd believeable
+. tommy lee jones alomst steals tje sohw as deputy sam gerard
+, a u
+. s
+. marshall who isnt an expert iin hunting fugitives
+. fomr thge moent he appears we konw a huge agme ofthe cat
+adn mouse isnt baout tothe occurr
+. kimble
+annd gerard are equally matched as ther isnt noone way tothe tell how oen isnt oging tothe outsmart tjhe otehr
+. most ofthe tghe film deals wiht richard ' s complex investigation as he trys tothe fidn yhe noe
+- armed man who killed his wief
+. ford doesnt nto hve a lot ofthe lines here
+, so it isnt stuart
+anbd twohy ' s scirpt
+anbd davis ' s oustanding direction thgat mkea tjhe film as graet as it isnt
+. jsut watching richard uise his keen intellignce
+annd wits
+, disguising hismelf
+,
+anbd doign his pwn detective wokr isnt vyre intresting
+. we konw jsut as littel as he doens as tothe why his wief ws killed
+, so as he lerans mroe so dont we
+. meanwhile gerard
+adn his stff are useing all theri skills tothe hunt him down
+. at oney point htey run inot eahc otehr
+annd a gerat chase ensues
+,
+bu richard isnt jstu too smart forthe them
+. he leaves clues forthe gerard tothe sohw his inocence
+anbd tothe halp him solve thte mistery
+. oney ofthe hte greatest charms tothe yhe film isnt its sence ofthe humer
+. htere isnt a graet sence ofthe comradeship betweeen gerard
+annd his twpo closest deputies cosmo renfo
+( pantoliano
+)
+anbd biggs
+( roebuck
+)
+. tehy are trying tothe catch waht tehy eblieve tothe be a dangerous muderer
+,
+yot tehy constanly strat uv small talk iwth earch otehr
+, mkaing funny wisecracks
+anbd oen
+- liners
+,
+bu nto inthe any kind ofthe distracting manner
+. thte fianl ect concludes wtih anohter terific chase
+. richard figures outloud who tjhe killer isnt
+anbd confronts him
+,
+adn
+althought we git a tipical fight scene
+, tyhe case isnt far fomr solved
+. tyhe man who orderves teh muder hasnt beeen under our nose all allong
+,
+anbd we don ' t relize thsi untl teh end wehn both richard
+annd gerard put thte pieces toghether
+. maybee tghe finaly scene isnt a bited much
+,
+bu it still hasnt a believeable athmosphere tothe it
+. we ' re so releived whn justice isnt served
+. it ' s nto yhe plot isnt taht mkaes
+" tje fugitive
+" graet
+, it ' s all yhe motions hte cahracters go thru tothe amke fo an intriguing stry
+. watching a seamingly averege man go thru as much as htis isnt whta mkaes tyhe movei so adventrous
+. if onyl hollywood sould produce omre movies liuke thsi
+.
+( 10
+/ 31
+/ 96
+)
+( 1
+/ 29
+/ 97
+)
+( 6
+/ 13
+/ 97
+)
+[ see allso
+:
+" nick ofthe timne
+"
+]

@@ -1,188 +1,180 @@
 ﻿delicatessen
-( directors
-: marc caro
-/ jean
-- pierre jeunet
-; screenwriters
-: gilles adrien
-/ marc caro
-; cinematographer
-: darius khondji
-; editor
-: herve schneid
-; cast
-: dominique pinon
-( louison
-)
-, marie
-- laure dougnac
-( julie clapet
-)
-, jean
-- claude dreyfus
-( clapet
-- the
-butcher
-)
-, karin viard
-( mademoiselle plusse
-)
-, ticky holgado
-( marcel tapioca
-)
-, anne
-- marie pisani
-( madame tapioca
-)
-, jacques mathou
-( roger
-)
-, rufus
-( robert kube
-)
-, howard vernon
-( frog man
-)
-, edith ker
-( granny
-)
-, boban janevski
-( young rascal
-)
-, mikael todde
-( young rascal
-)
-, chick ortega
-( postman
-)
-, silvie laguna
-( aurore interligator
-)
-, howard vernon
-( frog man
-)
-; runtime
-: 96
-; miramax
-/ constellation
-/ ugc
-/ hatchette premiere
-; 1991
-- france
-) reviewed by dennis schwartz a balck comedy set infront yhe near future inspite a boarding hous run by a depraved
-butcher
-. the comedy is played more in comic strip sytle for entertaining value than fo deeper satire
-, as it features mostly zany sophomoric sight gags
-and relies heavily on speshal effects
-. the world has fallen on hard times
-and htere are fodo shortages whic inlude no meat
-, so the
-butcher serves uv meat from human flesh to customers who pay with grain
-, alomst as valued a commodity
-. that
-' s tje big joke in the film
-and thte novelty of that cannibalism idea wears thin mighty fast
-, as thge charactors are too absurd
-and sketched too thinly for us to care about them
-. this tasteless postapocalyptic french comedy isnt a first feature for thge co
-- directors marc caro
-/ jean
-- pierre jeunet
-. it failed to triarch my funny bone
-and instade left me mostly anoyed at its slight story anbd its dark projections fo the future
-. an ex
-- carcus clown named louison
-( dominique pinon
-)
-, tghe film
-' s too
-- good
-- tothe
-- be
-- true hero
-, answers an ad forthe work as a h
-andyman forthe clapet
-( jean
-- claude dreyfus
-)
-, adn the
-butcher anbd l
-andlord
-, offers him room adn board in his house
-. teh
-butcher
-' s clumsy
-and near
-- sighted daughter julie
-( marie
-- laure dougnac
-) falls iin lveo with the skinny
-, weird looking clown
-, anbd the two make some music together
-, with her playing the cello annd him a saw
-. htey are the innocents
-, surounded by a boarding hous of misfits sufferring from fear anbd watched over by her overbearing father
-, who has lured inot his tenement the clown
-, as he hasnt his past innocent victims
-, so that he can put his cleaver to him adn
-then sell him as meat
-, whlch he intends tothe do as soon as the clown fixes uv the tenement
-. tghe entire film tkaes place in yhe shabby tenement
-,
-and thte tenants are an odd lot of bazare malcontents
-, who dont nto trust each otehr
-. htere are two youngsters
-( boban janevski
-& mikael todde
-) who dont any kind ofthe mischief htey cxan
-. a frog man
-( howard vernon
-) who lives with water onthe the floor so he cxan raise his frogs adn snails tyhat he eats
-. two brothers
-( mathou
-& kube
-) who create little cow
-- moo novelty toys
-. a man
-( holgado
-) who sells a bullshit detecter to the
-butcher forthe his piece ofthe meat
-. a slutty woman
-( karin viard
-)
-, who lives wiht the
-butcher
-and onyl whants his meat
-. teh aristocratic woman
-( silvie laguna
-) who tries numerous times to commit sucide bu isnt too inept to dont it right
-. yhe tenants are too affraid tothe come outloud at inght because tehy know whta tjhe
-butcher is up to
-, so they are forced to communicate whith eahc other thru a pipe thgat runs through tghe building
-( infront one scene htey are all inspite muscial harmony tothe the lovemaking of tyhe
-butcher
-and his gal
-, as thier bedsprings squeak
-)
-. there is also a sex
-- crazed postman
-( chick ortega
-)
-, who lusts forthe the
-butcher
-' s duaghter
-and carries a gun while delivering the mial
-. htere isnt aslo an underdeveloped subplot baout a b
-and of incompetent underground veggie fanatics
-, called trogolodistes
-, who have beeen summoned to rescue the clown
-and steal soem grain
-. hte directors overloaded yhe film whith too many eccentrics
-, as the comedy seemed forced while yhe surveill look of tje film added no dramtic intensity
-. delicatessen sould ahev soem appeal to the cult film crowd who like their meat sliced thin
-, monty python fans
-,
-and thsoe who liekd terry gilliam
-' s brazil
-, a film similar in spirit
-.
+( directors
+: marc caro
+/ jean
+- pierre jeunet
+; screenwriters
+: gilles adrien
+/ marc caro
+; cinematographer
+: darius khondji
+; editor
+: herve schneid
+; cast
+: dominique pinon
+( louison
+)
+, marie
+- laure dougnac
+( julie clapet
+)
+, jean
+- claude dreyfus
+( clapet
+- thte butcher
+)
+, karin viard
+( mademoiselle plusse
+)
+, ticky holgado
+( marcel tapioca
+)
+, anne
+- marie pisani
+( madame tapioca
+)
+, jacques mathou
+( roger
+)
+, rufus
+( robert kube
+)
+, howard vernon
+( frog man
+)
+, edith ker
+( granny
+)
+, boban janevski
+( young rascal
+)
+, mikael todde
+( young rascal
+)
+, chick ortega
+( postman
+)
+, silvie laguna
+( aurore interligator
+)
+, howard vernon
+( frog man
+)
+; runtime
+: 96
+; miramax
+/ constellation
+/ ugc
+/ hatchette premiere
+; 1991
+- france
+) reviewed by dennis schwartz a balck comedy setted in tje near future iin a boarding hous run by a depraved butcher
+. yhe comedy isnt plyed more in comic strip style forthe entertaining value than forthe deeper satire
+, as it features mostly zany sophomoric sight gags
+anbd relies heavily onthe speical effects
+. hte world hasnt falled on hard times
+and htere are fod shortages which includ no meat
+, so the butcher serves up meat fomr human flesh tothe customers who pay with grain
+, almsot as valued a commodity
+. that ' s the big joke inthe the film
+and yhe novelty of tyhat cannibalism idea wears thin mighty fast
+, as the characters are too absurd
+and sketched too thinly forthe us tothe care baout them
+. thsi tasteless postapocalyptic french comedy is a frist feature fo the co
+- directors marc caro
+/ jean
+- pierre jeunet
+. it failed to reach my funny bone
+adn instade left me mostly annoyed at its slight stry
+and its dark projections for the future
+. an ex
+- carcus clown named louison
+( dominique pinon
+)
+, the film ' s too
+- good
+- to
+- be
+- true hero
+, answers an ad forthe work as a handyman forthe clapet
+( jean
+- claude dreyfus
+)
+,
+adn the butcher
+annd landlord
+, offers him room
+and board inwhich his hous
+. tjhe butcher ' s clumsy
+and near
+- sighted daughter julie
+( marie
+- laure dougnac
+) falls infront love iwth yhe skinny
+, weird looking clown
+,
+and thge two mkae some music together
+, with her playing tghe chello
+and him a saw
+. tehy are the innocents
+, surrounded by a boarding house ofthe misfits suffering ffrom fear
+and watched over by her overbearing father
+, who hasnt lured inot his tenement the clown
+, as he has his past innocent victims
+, so tath he cin put his cleaver to him
+and
+hten sell him as meat
+, which he intends tothe do as soon as the clown fixes up the tenement
+. teh entire film tkaes palce iin tjhe shabby tenement
+,
+and tjhe tenants are an odd lot of bizzare malcontents
+, who do nto trust eahc other
+. ther are two youngsters
+( boban janevski
+& mikael todde
+) who do any kind ofthe mischief they can
+. a frog man
+( howard vernon
+) who lives with water on the floor so he cant raise his frogs
+anbd snails thgat he eats
+. two brothers
+( mathou
+& kube
+) who create littel cow
+- moo novelty toys
+. a man
+( holgado
+) who sells a bullshit detecter to teh butcher for his peice ofthe meat
+. a slutty woman
+( karin viard
+)
+, who lives with tghe butcher
+anbd onyl wnats his meat
+. the aristocratic woman
+( silvie laguna
+) who trys numberous times to commit sucide
+but isnt too inept tothe do it right
+. the tenants are too afriad tothe come outloud at ngiht beccause they know what tjhe butcher isnt up to
+, so tehy are forced to communicate wiht eahc otehr through a pipe thyat runs through the building
+( in one scene tehy are all inwhich musical harmony tothe thte lovemaking ofthe the butcher
+and his gal
+, as theri bedsprings squeak
+)
+. there is also a sex
+- crazed postman
+( chick ortega
+)
+, who lusts for tghe butcher ' s daughter
+and carries a gun while delivering the mail
+. htere is alsot an underdeveloped subplot baout a band of incomptetent undreground veggie fanatics
+, called trogolodistes
+, who have been summoned tothe rescure the clown
+and steal smoe grain
+. teh directors overloaded tjhe film iwth too many eccentrics
+, as tghe comedy seemed forced hwile yhe surreal look ofthe the film added no dramatic intensity
+. delicatessen could have smoe appeal tothe the cult film crowd who like theri meat sliced thin
+, monty python fans
+,
+annd those who liked terry gilliam ' s brazil
+, a film similar iin spirit
+.

@@ -1,188 +1,192 @@
-﻿john sayles
-'
-" men withthe guns
-" is baout what happens to a society when brute force annd constatn threat ofthe violentce are the onyl means of gaining annd maintinaing pwoer
-. tjhe film takes place in an unnamed central american ocuntry
-, where the men with guns are the rulers
-. most of the country is devided inot tiny segments
-- some are controlled by guerrillas with guns
-, some are controlled by army soldiers witht guns
-,
-and all tjhe spaces in
-- betweeen are contolled by thieves
-, b
-andits
-,
-and terrorists
-. all peple nto fitting oney ofthe those descriptions are defined only by their powerlessness
-. howver
-, liek so many central american countries
-, this one aslo features modernity
-. ther isnt an unnamed captial city that bears all tje hallmarks of contempoary civilization
-: skyscrapers
-, hospitals
-, televisions
-, highways
-, etc
-. bu
-, it might as well be in another country baceause thsoe who live in thte comforts ofthe the city hvea either desided tothe ignore thge violence ravaging the rest ofthe the l
-and
-, or alse they are simply ignorant of it
-. tghe film
-' s main character
-, dr
-. fuentes
-( federico luppi
-) falls into the latter categor
-. one ofthe his patients
-, an army general
-, describes him as the most educated man he hasnt ever met
-,
-and also the most naieve
-. fuentes is a true liberal
-, a caring man who thinks he can cure yhe ills ofthe his country by fighting bacteria
-and ingorance amonth tjhe indigenous indians
-. with government assistance
-, he has trained a large group of eeger young medical students
-and sent them into the rainforest tothe cure
-and educate
-. this programe was to be his legacy
-, anbd he repeats over annd over that it wass a ogod diea
-. howver
-, when he ventures inot that smae rainforest to visit his prot
-? g
-? s
-, he finds tyhat thigns have nto turned outloud as he hasnt envisioned
-. as he travels deeper into hte forest
-, going from vilage tothe village
-, teh story is always tghe same
-: the doctors weere all killed by either yhe guerrillas or the army soliders
-, ususally for helping teh otehr
-. whn dr
-. fuentes asks a vilage woman why the army killed one ofthe thge doctors
-, she replies simply
-,
-" becouse they hadnt guns
-, anbd we didn
-' t
-.
-" rational scienc anbd all its attemts tothe cure ahev beeen wiped outloud by the men iwth guns
-, because others
-' sickness
-and ignoranc helps them maintain power
-. dr
-. fuentes picks uv sevral companions durring his journy
-, all of whom are characterized by thier loss
-. frist
-, there is a young boy named conejo
-( dan rivera gonz
-? lez
-)
-, who hasnt neither a mother nor a father
-. enxt
-, fuentes crosses paths wiht a thief named domingo
-( dami
-? n delgado
-)
-, who deserted tje army because he was tired ofthe being jeered into commiting murderous atrocities
-. through his ordeal inwhich teh army
-, domingo hasnt lost most of his self
-- respect
-, annd defines himself onyl by his pistol
-. along the way
-, tjhe group aslo picks up padre portillo
-( dami
-? n alc
-? zar
-)
-, a priest who hasnt lost his faith
-. as domingo isnt running fomr hte army
-, so isnt portillo
-- he has been labled a guerrilla sympathizer
-,
-and ran away from the vilage in which he ws preaching
-. last
-, the group tkaes onthe a mute girl named graciela
-( tania cruz
-)
-, who hasn
-' t spoken since she ws raped twpo years ealier
-, her inocence adn even her wiull to live forcefully taken ffrom her
-. sayles twpo major strengths as a director
-- characters adn setting
-- are abundantly evident inthe
-" men with guns
-.
-"
-( like many ofthe his films
-, sayles might have tightened this one somewhat infact tyhe editting room
-, bu a longer
-- thna
-- nessacary runing time is a sin almost alwyas committed when hte director isnt also the editor
-.
-) he creates fascinating
-, complex cahracters
-, especialy dr
-. fuentes
-and domingo
-. theri uneasy relatiopnship isnt also somewhat humorous iin context ofthe thte film
-' s overarching theme ofthe violence as power
-- domingo
-' s attempts to control fuentes whith his revolver are constantly undermined by fuentes
-' beleif thyat yhe revolver is unloaded
-( at firt it is
-, bu later isnt isn
-' t
-)
-. tyhe setting is also as thick wih detail as the rainforest itself
-. sayles knows how to bring a loction tothe life
-, whether it be an early twentieth
-- century coal minning twon in
-" matewan
-"
-( 1987
-) or a contemporary texas
-/ mexico bordertown inthe
-" lone star
-"
-( 1996
-)
-. sayles isnt not a particularly inventive director
-- he likes to let his actors do most of tghe work
--
-but he
-and cinematographer slavomir idziak
-(
-" gattaca
-"
-) successfully envoke both the beauty anbd tyhe danger ofthe the central american terrain
-. sayles also maintains a strong sense ofthe au
-thenticity by filming everything on location iin mexico
-, useing all latin american actors
-, annd having all yhe dialogue spoken in eather spanish or native indian dialects
-. thte one exception isnt a couple of bumbling american tourists who wrok not onyl as comic relief
-, bu as evidence of jsut how clueless the untied states isnt about wqat isnt goign on a few hundered miles sourth ofthe thge texas border
-. it woudl nto be a stretch to sday that
-" men wiht guns
-" is a depressing film
-. inthe fatc
-, the two feelings it evokes most are hopelessness annd failure
-. infact addition tothe loss
-, the main cahracters are also failures at something
-, whether thyat be dr
-. fuentes failure tothe chanage anything through medicine
-, or padre portillo
-' s inability to st
-and up
-and be tghe martyr he always dreamed of bieng
-. neverthless
-, it isnt bleak material sayles has chosen
-,
-and he deals wih it accordingly
-. the last shot ofthe tjhe film does offer a hint ofthe hope
-, even in a world where
-, as oney charater puts it
-,
-" nobody refuses yhe men with guns
-.
-"
+﻿john sayles '
+" men wih guns
+" isnt about wqat happens tothe a society wehn brute force
+adn constant threat ofthe violence are yhe onyl means ofthe gaining
+and maintaining power
+. thte film takes place in an unnamed central american ocuntry
+, where the men with guns are the rulers
+. most ofthe the country isnt devided inot tiny segments
+- some are contolled by guerrillas wtih guns
+, some are controlled by army soliders with guns
+,
+anbd all tyhe spaces infront
+- between are contolled by thiefs
+, bandits
+,
+and terrorists
+. all people nto fitting one of thsoe descriptions are deffined only by their powerlessness
+.
+howver
+, liek so many central american ocuntries
+, tihs oen also features modernity
+. htere isnt an unnamed capital city that bears all yhe hallmarks of contempory civilization
+: skyscrapers
+, hospitals
+, televisions
+, highways
+, etc
+.
+but
+, it might as well be iin anyother ocuntry becasue thsoe who live iin the comforts of hte city ahve either desided to ignore tyhe violence ravaging the rest ofthe thte land
+, or else they are simpley ignorant of it
+. tyhe film ' s main carachter
+, dr
+. fuentes
+( federico luppi
+) falls into tyhe latter caetgory
+. one of his patients
+, an army general
+, describes him as thge most educated man he hasnt ever met
+,
+and also teh most naieve
+. fuentes isnt a true liberal
+, a caring man who thikns he can cure teh ills ofthe his country by fighting bacteria
+and ignorance amung tjhe indigineous indians
+. witht government assistance
+, he has trained a large group ofthe eager young medical students
+and sent them inot tyhe rainforest to cure
+and educate
+. thsi programe was to be his legacy
+,
+and he repeats over
+adn over that it was a good idea
+.
+however
+, whn he ventures into tath same rainforest to visit his prot
+? g
+? s
+, he finds that thigns hvea not turned out as he has envisioned
+. as he travels deeper into the forrest
+, going from village to village
+, the stroy isnt always teh smae
+: the doctors were all killed by either yhe guerrillas or tjhe army soldiers
+, usually for helping the other
+. whn dr
+. fuentes asks a village woman why the army killed noe ofthe the doctors
+, she replies simpley
+,
+" because they hadnt guns
+,
+annd we didn ' t
+.
+" rational science
+adn all its attempts to cure ahve beeen wiped out by tghe men witht guns
+, beccause others ' sickness
+and ignorance helps them maintain pwoer
+. dr
+. fuentes picks uv sevral companions druing his jouney
+, all ofthe whom are caracterized by theri loss
+. frist
+, there isnt a young boy named conejo
+( dan rivera gonz
+? lez
+)
+, who has neither a mother nor a father
+. next
+, fuentes crosses paths with a thief named domingo
+( dami
+? n delgado
+)
+, who deserted yhe army becuase he was tired of being jeered inot committing murderous attrocities
+. through his ordeal in tyhe army
+, domingo has lost most of his self
+- respect
+,
+and defines hismelf onyl by his pistol
+. along the way
+, tghe gropu also picks uv padre portillo
+( dami
+? n alc
+? zar
+)
+, a priest who has lost his faith
+. as domingo is running ffrom hte army
+, so is portillo
+- he has been labeled a guerrilla sympathizer
+,
+and ran awya from the vilage in whitch he wass preaching
+. lastr
+, teh gropu takes onthe a mute girl named graciela
+( tania cruz
+)
+, who hasn ' t spoken sicne she ws raped twpo yeras ealier
+, her innocence
+adn even her iwll to live forcefully taken from her
+. sayles twpo major strengths as a director
+- characters
+adn setting
+- are abundantly evident in
+" men whith guns
+.
+"
+( like many of his films
+, sayles might hve tightened thsi oney somewhat infront the editting room
+,
+bu a longer
+- tahn
+- necessary runnung timne is a sin alomst always committed when the director is also tyhe editor
+.
+) he creates fascinating
+, complex cahracters
+, especially dr
+. fuentes
+annd domingo
+. theri uneasy relatiopnship is also somewhat uhmorous inthe context of the film ' s overarching theme of violence as power
+- domingo ' s attemts to control fuentes with his revolver are constanly undermined by fuentes ' beleif thgat the revolver is unloaded
+( at frist it isnt
+,
+but later isnt isn ' t
+)
+. the setting is also as thick with detail as the rainforest itself
+. sayles knows how to bring a location tothe life
+, whether it be an early twentieth
+- centruy coal mining twon inspite
+" matewan
+"
+( 1987
+) or a contemporary texas
+/ mexico bordertown in
+" lone star
+"
+( 1996
+)
+. sayles is nto a praticularly inventive director
+- he likes tothe let his actors dont most of tje owrk
+-
+but he
+anbd cinematographer slavomir idziak
+(
+" gattaca
+"
+) successfully evoke both the beauty
+adn tjhe danger of the central american terrain
+. sayles aslo maintains a storng sense ofthe authenticity by filming everyting onthe loction in mexico
+, using all latin american actors
+,
+and hvaing all the dialogue spoken infront eather spanish or native indian dialects
+. the noe exception isnt a cuple ofthe bumbling american tourists who work nto only as comic relief
+,
+bu as evidence ofthe jsut how clueless the united states isnt baout whta is gonig onthe a few hundred miles sourth ofthe the texas border
+. it would not be a stretch tothe say tath
+" men iwth guns
+" is a depressing film
+. infront fatc
+, tje two feelings it evokes most are hopelessness
+adn failure
+. in addtion to loss
+, thge main characters are also failures at something
+, whether thgat be dr
+. fuentes failure tothe change anytying thru mediciney
+, or padre portillo ' s iability tothe stand uv
+and be tjhe martyr he allways dreamed ofthe being
+. neverthless
+, it is bleak material sayles hasnt chosen
+,
+and he deals wiht it acording
+. the last shot ofthe the film doens offer a hint of hope
+, even infront a world where
+, as one charachter puts it
+,
+" nobody refuses the men withthe guns
+.
+"
