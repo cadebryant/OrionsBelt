@@ -120,7 +120,7 @@ public class SentimentAnalysis {
 		}
 
 		// positive matches MINUS negative matches
-		float result = (posAccumulator - negAccumulator);
+		float result = (posAccumulator + negAccumulator);
 
 		// negative?
 		if (result < 0.0) {
