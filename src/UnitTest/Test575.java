@@ -3,10 +3,12 @@ package UnitTest;
 import FuzzyMatch.FuzzyMatch;
 import FuzzyMatch.MatchType;
 import SentimentAnalysis.SentimentAnalysis;
+//import com.ibm.avatar.algebra.datamodel.Text;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+//import java.io.FileWriter;
 import java.io.File;
 import java.io.FilenameFilter;
 
@@ -24,8 +26,6 @@ public class Test575 implements FilenameFilter
     
     public static int analyze(BufferedReader reader, FuzzyMatch matcher, String[] posWordList, String[] negWordList) throws IOException
     {
-        long startTime = System.currentTimeMillis();
-
         String nextLine = null;
         int weight = 3;
         int score = 0;
@@ -60,12 +60,25 @@ public class Test575 implements FilenameFilter
         String[] positives;
         String[] negatives;
         String root = "/Users/kwonus/git/OrionsBelt/textAnalytics/src/main/MovieReviews";
+        String grouping = "100";
+        float similarityThreshold = (float) 0.0;
         
         if (args.length > 0)
             root = args[0];
+        if (args.length > 1)
+        {
+            if (args[1] == "minimum")
+                similarityThreshold = (float) 0.8;
+            if (args[1] == "medium")
+                similarityThreshold = (float) 0.9;
+            else // "exact"
+                similarityThreshold = (float) 1.0;
+        }
+        if (args.length > 2)
+            grouping = args[2];
 
         BufferedReader reader = null;        
-        FuzzyMatch matcher = new FuzzyMatch(MatchType.Levenshtein, (float) 0.8);
+        FuzzyMatch matcher = new FuzzyMatch(MatchType.Levenshtein, similarityThreshold);
         int score = 0;
         
         try
@@ -106,7 +119,7 @@ public class Test575 implements FilenameFilter
             negatives = polarityStrings.split(" ");
             // end loading lists
             
-            System.out.println("file" + "," + "persentage typos" + "," + "measured" + "," + "polarity" + "," + "score" + "," + "correct");
+            System.out.println("file" + "," + "persentage typos" + "," + "measured" + "," + "polarity" + "," + "score" + "," + "correct" + "," + "duration");
             Test575 test = new Test575();
 
             String[] polarity = { "pos", "neg" };
@@ -114,35 +127,34 @@ public class Test575 implements FilenameFilter
             
             for (int p = polarity.length-1; p >= 0; p--)
             {
-                for (int t = typos.length - 1; t >= 0; t--)
+                String dir = root + "/" + polarity[p] + "/typos." + grouping;
+
+                String[] files = test.GetFiles(dir);
+                int fcnt = files.length;
+
+                for (int f = 0; f < fcnt; f++)
                 {
-                    String dir = root + "/" + polarity[p] + "/typos." + typos[t];
-            
-                    String[] files = test.GetFiles(dir);
-                    int fcnt = files.length;
+                    long docStartTime = System.currentTimeMillis();
+                    String file = dir + '/' + files[f];
+                    reader = new BufferedReader(new FileReader(file));
+                    score = Test575.analyze(reader, matcher, positives, negatives);
+                    reader.close();
+                    reader = null;
 
-                    for (int f = 0; f < fcnt; f++)
-                    {
-                        String file = dir + '/' + files[f];
-                        reader = new BufferedReader(new FileReader(file));
-                        score = Test575.analyze(reader, matcher, positives, negatives);
-                        reader.close();
-                        reader = null;
-
-                        String measured = "";
-                        if (score > 0)
-                            measured = "pos";
-                        else if (score < 0)
-                            measured = "neg";
-                        else
-                            measured = "";
-                        String correct = (measured == polarity[p]) ? "1" : "0";
-                        System.out.println(files[f] + "," + typos[t] + "%," + measured + "," + polarity[p] + "," + score + "," + correct);
-                    }                    
-                }
+                    String measured = "";
+                    if (score > 0)
+                        measured = "pos";
+                    else if (score < 0)
+                        measured = "neg";
+                    else
+                        measured = "";
+                    String correct = (measured == polarity[p]) ? "1" : "0";
+                    long docEndTime = System.currentTimeMillis();
+                    System.out.println(files[f] + "," + grouping + "%," + measured + "," + polarity[p] + "," + score + "," + correct + "," + (docEndTime-docStartTime));
+                }                    
             }
             long endTime = System.currentTimeMillis();
-            System.out.println("RUN TIME (milliseconds) = " + (startTime-endTime));
+            System.out.println("RUN TIME (milliseconds) = " + (endTime-startTime));
         }
         catch (IOException e)
         {

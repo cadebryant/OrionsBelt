@@ -24,7 +24,7 @@ public class FuzzyMatch
     {
         float similarity = Metric.getSimilarity(string1, string2);
 
-        if (similarity >= 1 - AcceptableDistance)
+        if (similarity >= 1.0 - AcceptableDistance)
             return similarity;
 
         return (float) 0.0;
