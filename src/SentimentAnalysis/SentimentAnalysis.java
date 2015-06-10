@@ -13,15 +13,12 @@ public class SentimentAnalysis {
 	 * @throws IOException
 	 * @throws LangDetectException
 	 */
-	public static java.lang.Integer analyze(Text inputText, java.lang.Float matchThreshold, Text posWords, Text negWords) /*throws IOException*/ {
+	public static java.lang.Integer analyze(Text inputText, java.lang.Float matchThreshold, Text posWords, Text negWords)
+	{
 		// used to store positive and negative words for scoring
 		String[] posWordList = posWords.getText().split(" ");
 		String[] negWordList = negWords.getText().split(" ");
 
-		// keep some stats! [-1 / 0 / 1 / no text to
-		// classify]
-		//int[] stats = new int[6];		
-		
 		long startTime = System.currentTimeMillis();
 		
 		String[] segments = inputText.getText().split("\n\r");
@@ -36,25 +33,23 @@ public class SentimentAnalysis {
 		java.lang.Integer endWeight = 5;
 
 		int score = 0;
-		for (int s = 0; s <= last; s++) {
+		for (int s = 0; s <= last; s++)
+		{
             String segment = segments[s];
                         
 			java.lang.Integer weight;
-			if (s == 0) {
+			if (s == 0)
 				weight = beginWeight;
-			} else if (s == last) {
+			else if (s == last)
 				weight = endWeight;
-			} else {
+			else
 				weight = midWeight;
-			}
+			
 			int segmentPolarity = getSentimentScore(segment, matcher, posWordList, negWordList);
 			
 			if (segmentPolarity != 0)
 				score += (weight * segmentPolarity);
 		}
-		// ++ index so we won't have -1 and stuff...
-		//stats[score + 1]++;		// pretty sure that this is where your exception was coming from
-		
 		return score;
 	}
 
@@ -118,18 +113,14 @@ public class SentimentAnalysis {
 					negAccumulator -= negSimilarity;
 			}
 		}
-
 		// positive matches MINUS negative matches
 		float result = (posAccumulator + negAccumulator);
 
-		// negative?
-		if (result < 0.0) {
-			return -1;
-			// or positive?
-		} else if (result > 0.0) {
-			return 1;
-		}
-		// neutral to the rescue!
-		return 0;
+		if (result < 0.0)
+			return -1; // neg
+		else if (result > 0.0)
+			return  1; // pos
+
+		return 0; // neutral
 	}
 }
