@@ -19,8 +19,6 @@ public class SentimentAnalysis {
 		String[] posWordList = posWords.getText().split(" ");
 		String[] negWordList = negWords.getText().split(" ");
 
-		long startTime = System.currentTimeMillis();
-		
 		String[] segments = inputText.getText().split("\n\r");
 		
 		int len = segments.length;
