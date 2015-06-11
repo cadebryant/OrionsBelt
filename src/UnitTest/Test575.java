@@ -102,7 +102,7 @@ public class Test575 implements FilenameFilter
             polarityReader.close();
             positives = polarityStrings.split(" ");
             
-            polarityReader = new BufferedReader(new FileReader(root + "/negative-words.txt"));
+            polarityReader = new BufferedReader(new FileReader(root + "/negative-words-halved.txt"));
             polarityStrings = null;
             for (word = polarityReader.readLine(); word != null; word = polarityReader.readLine())
             {
