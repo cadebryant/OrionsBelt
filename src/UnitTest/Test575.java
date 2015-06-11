@@ -38,7 +38,7 @@ public class Test575 implements FilenameFilter
             if (nextSegment == null)
                 weight = 5;
             
-            int segmentPolarity = SentimentAnalysis.getSentimentScore(segment, matcher, posWordList, negWordList);
+            int segmentPolarity = SentimentAnalysis.getSentimentScore(segment, matcher, (float) 1.07, posWordList, negWordList);
 
             if (segmentPolarity != 0)
                 score += (weight * segmentPolarity);
@@ -102,7 +102,7 @@ public class Test575 implements FilenameFilter
             polarityReader.close();
             positives = polarityStrings.split(" ");
             
-            polarityReader = new BufferedReader(new FileReader(root + "/negative-words-halved.txt"));
+            polarityReader = new BufferedReader(new FileReader(root + "/negative-words.txt"));
             polarityStrings = null;
             for (word = polarityReader.readLine(); word != null; word = polarityReader.readLine())
             {

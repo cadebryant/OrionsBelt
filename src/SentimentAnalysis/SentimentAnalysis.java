@@ -43,7 +43,7 @@ public class SentimentAnalysis {
 			else
 				weight = midWeight;
 			
-			int segmentPolarity = getSentimentScore(segment, matcher, posWordList, negWordList);
+			int segmentPolarity = getSentimentScore(segment, matcher, (float) 1.0, posWordList, negWordList);
 			
 			if (segmentPolarity != 0)
 				score += (weight * segmentPolarity);
@@ -61,7 +61,7 @@ public class SentimentAnalysis {
 	 * @return score int: if < 0 then -1, if > 0 then 1 otherwise 0 - we don't
 	 *         care about the actual delta
 	 */
-	public static int getSentimentScore(String input, FuzzyMatch matcher, String[] posWordList, String[] negWordList) {
+	public static int getSentimentScore(String input, FuzzyMatch matcher, float bias, String[] posWordList, String[] negWordList) {
 		// normalize!
 		input = input.toLowerCase();
 		input = input.trim();
@@ -111,8 +111,14 @@ public class SentimentAnalysis {
 					negAccumulator -= negSimilarity;
 			}
 		}
+		float tuning = (float) 1.1;
 		// positive matches MINUS negative matches
-		float result = (posAccumulator + negAccumulator);
+//		float result = (posAccumulator / (float) posWordList.length) + (negAccumulator / (float) negWordList.length);
+		float result;
+		if (bias > 0.0)
+			result = (posAccumulator * bias) + (negAccumulator);
+		else
+			result = (posAccumulator) - (bias * negAccumulator);
 
 		if (result < 0.0)
 			return -1; // neg
